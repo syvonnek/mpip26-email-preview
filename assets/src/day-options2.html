@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,350;0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:680px;background:#050810;font-family:'Source Sans 3',sans-serif;padding:30px}
+  .optlabel{color:#8b90a5;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px;padding-top:44px}
+  .optlabel:first-child{padding-top:0}
+  .card{background:#000;border-radius:18px;padding:20px}
+
+  /* ============ OPTION D: full-bleed photo hero per day, ghost numeral ============ */
+  .d-day{position:relative;border-radius:16px;overflow:hidden;height:210px;margin-bottom:14px}
+  .d-day:last-child{margin-bottom:0}
+  .d-day img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.9)}
+  .d-day.d1 img{object-position:38% 42%}
+  .d-day.d2 img{object-position:80% 22%}
+  .d-day::before{content:"";position:absolute;inset:0;background:rgba(3,6,17,.32)}
+  .d-day::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,17,.98) 0%,rgba(3,6,17,.9) 32%,rgba(3,6,17,.5) 60%,rgba(3,6,17,.15) 82%,transparent 100%)}
+  .d-ghost{position:absolute;left:14px;top:-28px;font-size:150px;font-weight:800;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);z-index:1;line-height:1}
+  .d-content{position:relative;z-index:2;padding:26px 24px;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:340px}
+  .d-tag{display:inline-block;width:fit-content;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:10px}
+  .d-day.d1 .d-tag{background:rgba(34,211,238,.16);color:#22D3EE;border:1px solid rgba(34,211,238,.4)}
+  .d-day.d2 .d-tag{background:rgba(139,92,246,.16);color:#B79CF7;border:1px solid rgba(139,92,246,.4)}
+  .d-title{font-size:26px;font-weight:800;color:#fff;line-height:1.08}
+  .d-desc{margin-top:8px;font-size:12px;line-height:1.5;color:#CDD5E1}
+  .d-link{margin-top:10px;font-size:12px;font-weight:700;color:#8FE3F5}
+
+  /* ============ OPTION E: diagonal spectrum split, single dynamic block ============ */
+  .e-wrap{position:relative;border-radius:18px;overflow:hidden;height:300px}
+  .e-half{position:absolute;top:0;bottom:0;width:56%;overflow:hidden}
+  .e-half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .e-half.d1{left:0;clip-path:polygon(0 0,100% 0,80% 100%,0% 100%)}
+  .e-half.d2{right:0;clip-path:polygon(20% 0,100% 0,100% 100%,0% 100%)}
+  .e-half.d1::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,17,.95) 0%,rgba(3,6,17,.55) 55%,transparent 100%)}
+  .e-half.d2::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(3,6,17,.95) 0%,rgba(3,6,17,.55) 55%,transparent 100%)}
+  .e-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:linear-gradient(180deg,#22D3EE,#8B5CF6,#E34FCB);transform:translateX(-50%) skewX(-12deg);z-index:3}
+  .e-content{position:absolute;z-index:2;top:0;bottom:0;width:44%;padding:26px 22px;display:flex;flex-direction:column;justify-content:center}
+  .e-content.d1{left:0}
+  .e-content.d2{right:0;text-align:right;align-items:flex-end}
+  .e-tag{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  .e-content.d1 .e-tag{color:#22D3EE}
+  .e-content.d2 .e-tag{color:#E9A6E0}
+  .e-title{margin-top:8px;font-size:23px;font-weight:800;color:#fff;line-height:1.1}
+  .e-date{margin-top:6px;font-size:11.5px;color:#9aa1b8}
+
+</style></head>
+<body>
+
+<div class="optlabel">Option D &middot; full-bleed photo per day, oversized ghost numeral, session imagery doing the work</div>
+<div class="card">
+  <div class="d-day d1">
+    <img src="../drive-src/screens/day1/02 Lab 1 - Primary Correction.png">
+    <div class="d-content">
+      <div class="d-tag">Day 1 &middot; Sept 29</div>
+      <div class="d-title">Color Mode</div>
+      <div class="d-desc">A full day inside Adobe's new grading workspace, closing with a live Q&amp;A with Alexis Van Hurkman.</div>
+      <div class="d-link">View Day 1 program &rarr;</div>
+    </div>
+  </div>
+  <div class="d-day d2">
+    <img src="../drive-src/screens/day2/01 Find the Story in the Footage.jpg">
+    <div class="d-content">
+      <div class="d-tag">Day 2 &middot; Sept 30</div>
+      <div class="d-title">AI-Assisted Post</div>
+      <div class="d-desc">A practical, editor-first tour of AI across the post workflow, from footage search to Firefly Boards.</div>
+      <div class="d-link">View Day 2 program &rarr;</div>
+    </div>
+  </div>
+</div>
+
+<div class="optlabel">Option E &middot; one dynamic diagonal block, both days at once, spectrum seam down the middle</div>
+<div class="card">
+  <div class="e-wrap">
+    <div class="e-half d1"><img src="../day1-card-558x190.jpg"></div>
+    <div class="e-half d2"><img src="../day2-card-558x190.jpg"></div>
+    <div class="e-divider"></div>
+    <div class="e-content d1">
+      <div class="e-tag">Day 1</div>
+      <div class="e-title">Color Mode</div>
+      <div class="e-date">Sept 29</div>
+    </div>
+    <div class="e-content d2">
+      <div class="e-tag">Day 2</div>
+      <div class="e-title">AI-Assisted Post</div>
+      <div class="e-date">Sept 30</div>
+    </div>
+  </div>
+</div>
+
+</body></html>

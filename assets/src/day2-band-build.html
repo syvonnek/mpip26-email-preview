@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,350;0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1116px;height:460px;overflow:hidden;background:#000;font-family:'Source Sans 3',sans-serif}
+  .band{position:relative;width:1116px;height:460px;border-radius:32px;overflow:hidden}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% 22%;filter:brightness(.6) saturate(.9)}
+  .band::before{content:"";position:absolute;inset:0;background:rgba(3,6,17,.32)}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,17,.98) 0%,rgba(3,6,17,.92) 34%,rgba(3,6,17,.55) 60%,rgba(3,6,17,.18) 82%,transparent 100%)}
+  .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 0 0 48px;max-width:640px}
+  .tag{display:inline-flex;width:fit-content;font-size:24px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border-radius:999px;margin-bottom:22px;
+    background:rgba(139,92,246,.16);color:#B79CF7;border:1.5px solid rgba(139,92,246,.45)}
+  .title{font-size:56px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.01em}
+  .desc{margin-top:18px;font-size:25px;line-height:1.5;color:#D7DCE5;max-width:560px}
+  .link{margin-top:24px;font-size:24px;font-weight:700;color:#C9B3FF}
+</style></head>
+<body>
+<div class="band">
+  <img src="../drive-src/screens/day2/01 Find the Story in the Footage.jpg">
+  <div class="content">
+    <div class="tag">Day 2 &middot; Sept 30</div>
+    <div class="title">AI-Assisted Post</div>
+    <div class="desc">A practical, editor-first tour of AI across the post workflow, from footage search to Firefly Boards.</div>
+    <div class="link">View Day 2 program &rarr;</div>
+  </div>
+</div>
+</body></html>
