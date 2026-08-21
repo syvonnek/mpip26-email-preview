@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPIP26 Brand Tokens — Confirm Before Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#030611; --ink:#f2f4fa; --body:#b8bdcb; --dim:#8b90a5;
+    --r:#22D3EE; --o:#38B4F4; --g:#4F7CFF; --b:#6B6AF8; --v:#8B5CF6; --p:#E34FCB;
+    --spectrum:linear-gradient(100deg,var(--r) 0%,var(--g) 34%,var(--v) 67%,var(--p) 100%);
+    --hair:rgba(255,255,255,.14);
+    --card:#0a0d1a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",sans-serif;font-weight:350;line-height:1.6;padding:0 0 100px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 32px}
+  header{padding:56px 0 40px;border-bottom:1px solid var(--hair)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  h1{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+  h1 .spec{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+  .sub{margin-top:12px;color:var(--dim);font-size:16px;max-width:64ch}
+  .status{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:7px 14px;border-radius:999px;border:1px solid rgba(76,222,128,.35);background:rgba(76,222,128,.08);color:#7ee2a8;font-size:13px;font-weight:600}
+  .status i{width:7px;height:7px;border-radius:50%;background:#4cde80;flex:0 0 auto}
+  section{padding-top:52px}
+  h2{font-size:22px;font-weight:600;margin-bottom:6px}
+  .note{color:var(--dim);font-size:14px;max-width:70ch;margin-bottom:22px}
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .sw{border-radius:10px;overflow:hidden;border:1px solid var(--hair)}
+  .sw .fill{height:76px}
+  .sw .lbl{background:var(--card);padding:9px 10px;font-size:11.5px}
+  .sw .lbl b{display:block;font-size:12.5px;margin-bottom:2px}
+  .sw .lbl span{color:var(--dim);font-family:monospace;font-size:11px}
+  .gradient-bar{height:56px;border-radius:10px;background:var(--spectrum);border:1px solid var(--hair);margin-top:14px}
+  .base-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+  .type-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:28px 30px;margin-top:6px}
+  .type-card .h1sample{font-size:38px;font-weight:600;letter-spacing:-.02em}
+  .type-card .h1sample .spec{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .type-card .italic-sample{margin-top:14px;font-style:italic;font-weight:300;font-size:22px;color:var(--ink)}
+  .type-card .body-sample{margin-top:14px;font-weight:350;font-size:16px;color:var(--body);max-width:60ch}
+  .weights{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;color:var(--dim)}
+  .weights b{color:var(--ink);font-weight:600}
+  .fallback{margin-top:16px;font-size:12.5px;color:var(--dim)}
+  .fallback code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px;font-size:11.5px}
+  .logo-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:34px 30px;display:flex;align-items:center;gap:16px;margin-top:6px}
+  .logo-card img{height:26px;display:block}
+  .logo-card img.fmc{filter:brightness(0) invert(1)}
+  .logo-card img.adobe{height:22px}
+  .logo-card .x{color:#656c8a;font-size:20px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  .fact{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px}
+  .fact .k{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+  .fact .v{font-size:14.5px}
+  .flag{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.35);border-left:3px solid var(--v);border-radius:10px;padding:16px 20px;margin-top:16px;font-size:14px;line-height:1.6}
+  .flag b{color:#c3a8ff}
+  .decision{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:24px 26px;margin-top:6px}
+  .decision .opt{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--hair)}
+  .decision .opt:first-of-type{border-top:0;padding-top:0}
+  .decision .tag{flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;height:fit-content}
+  .decision .tag.rec{background:rgba(34,211,238,.15);color:var(--r);border:1px solid rgba(34,211,238,.4)}
+  .decision .tag.alt{background:rgba(255,255,255,.06);color:var(--dim);border:1px solid var(--hair)}
+  .decision .txt b{display:block;font-size:15px;margin-bottom:3px}
+  .decision .txt span{color:var(--dim);font-size:13.5px}
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">MPIP26 · Modern Post in Premiere · Email Build Checkpoint</div>
+  <h1>Brand tokens pulled from the <span class="spec">live site</span>, not the mockup file</h1>
+  <p class="sub">Read postinpremiere.com's actual computed CSS rather than trusting the local premiere-color-mode-v18.html handoff file — the two had drifted. Tokens below are what's really deployed, as of Aug 21, 2026.</p>
+  <div class="status"><i></i>Kept strictly separate from IPH — no purple/green, no Jakarta/Manrope</div>
+</header>
+
+<section>
+  <h2>Color palette</h2>
+  <p class="note">Live-site CSS custom properties (getComputedStyle on postinpremiere.com). Note this is more saturated than the local v18.html file's spectrum (#7de3fa→#ff4da6) — the deployed site refined it to a cleaner 4-stop cyan→blue→violet→magenta run. Using the live values.</p>
+  <div class="swatches">
+    <div class="sw"><div class="fill" style="background:#030611"></div><div class="lbl"><b>Background</b><span>#030611</span></div></div>
+    <div class="sw"><div class="fill" style="background:#f2f4fa"></div><div class="lbl"><b>Ink (headings)</b><span>#f2f4fa</span></div></div>
+    <div class="sw"><div class="fill" style="background:#b8bdcb"></div><div class="lbl"><b>Body text</b><span>#b8bdcb</span></div></div>
+    <div class="sw"><div class="fill" style="background:#8b90a5"></div><div class="lbl"><b>Dim / meta</b><span>#8b90a5</span></div></div>
+    <div class="sw"><div class="fill" style="background:#22D3EE"></div><div class="lbl"><b>Cyan (spectrum start)</b><span>#22D3EE</span></div></div>
+    <div class="sw"><div class="fill" style="background:#E34FCB"></div><div class="lbl"><b>Magenta (spectrum end)</b><span>#E34FCB</span></div></div>
+  </div>
+  <div class="gradient-bar"></div>
+  <p class="note" style="margin-top:10px;margin-bottom:0">Spectrum gradient (buttons, headline accents, dividers): <code style="font-family:monospace;font-size:12px">linear-gradient(100deg, #22D3EE 0%, #4F7CFF 34%, #8B5CF6 67%, #E34FCB 100%)</code></p>
+</section>
+
+<section>
+  <h2>Typography</h2>
+  <p class="note">Source Sans 3 — this is a real Google Font (not Adobe/Typekit), so it loads fine via the standard Google Fonts <code>&lt;link&gt;</code> in email, unlike the site's self-hosted variable woff2. Static weights below for email reliability instead of the site's variable 200–900 range.</p>
+  <div class="type-card">
+    <div class="h1sample">Modern Post <span class="spec">in Premiere</span></div>
+    <div class="italic-sample">Two days of live, practical training for professional editors</div>
+    <div class="body-sample">Body copy sample at weight 350 — the same light-but-readable weight the live site uses for paragraph text, color #b8bdcb on the dark background.</div>
+    <div class="weights">
+      <span><b>Headings</b> 600–700</span>
+      <span><b>Body</b> 350–400</span>
+      <span><b>Italic accents</b> 300 italic</span>
+      <span><b>Eyebrows/labels</b> 700, uppercase, wide tracking</span>
+    </div>
+    <div class="fallback">Email fallback stack: <code>"Source Sans 3", Arial, Helvetica, sans-serif</code> — Google Fonts link plus web-safe fallback for Outlook/clients that block external fonts.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Logo lockup</h2>
+  <p class="note">Confirmed clean — pulled from the live site's own nav markup, not the flagged arrow/chevron-branded assets in the roadshow samples folder.</p>
+  <div class="logo-card">
+    <img class="fmc" src="assets/fmc-text-only.png" alt="FMC">
+    <span class="x">×</span>
+    <img class="adobe" src="assets/adobe-logo-white.png" alt="Adobe">
+  </div>
+</section>
+
+<section>
+  <h2>Facts verified against the live site</h2>
+  <div class="facts">
+    <div class="fact"><div class="k">Pricing</div><div class="v">Single day $99 · Both days $149 — matches the campaign plan exactly. (The local v18.html mockup showed a stale placeholder $129 flat rate — ignored, live site wins.)</div></div>
+    <div class="fact"><div class="k">Dates</div><div class="v">Sept 29–30, 2026, 9 AM–5:30 PM ET, live on Zoom, 180-day recording access</div></div>
+    <div class="fact"><div class="k">Registration link</div><div class="v">Live "Register" buttons go straight to a Zoom Events checkout URL, not a form on the site</div></div>
+    <div class="fact"><div class="k">Speakers</div><div class="v">Eran Stern &amp; Luisa Winters confirmed as Co-Program Managers; Alexis Van Hurkman confirmed for the Day 1 closing Q&amp;A. Several Day 2 sessions still show "Speaker TBD" on the live site — copy will name sessions, not speakers, for those.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Sign-off / voice</h2>
+  <div class="flag"><b>Confirmed:</b> keeping "- FMC Team" exactly as written in Tyree's campaign plan, per your call — not treating it as IPH bleed, since FMC is still the presenting brand. Everything else (palette, fonts, no "- FMC Team"-style visual system, no purple/green) stays MPIP26's own.</div>
+</section>
+
+<section>
+  <h2>Which two emails first?</h2>
+  <p class="note">Your brief asked me to confirm this before building.</p>
+  <div class="decision">
+    <div class="opt">
+      <span class="tag rec">Recommended</span>
+      <div class="txt"><b>Email 1 (Launch Announcement) + Email 2 (Color Mode Deep Dive)</b><span>The two full campaign emails, in lineup order. Email 1 sends Monday Aug 24 — 3 days out — so it's the most time-sensitive either way.</span></div>
+    </div>
+    <div class="opt">
+      <span class="tag alt">Alternative</span>
+      <div class="txt"><b>Email 1 + In-Cart Push 1</b><span>Launch plus the first abandoner-recovery send, if you'd rather have the reminder email ready alongside launch instead of the Sept 3 deep-dive.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>MPIP26-Emails/token-confirmation.html · built from postinpremiere.com live CSS + MPIP26-Campaign-Plan.html · Aug 21, 2026</footer>
+
+</div>
+</body>
+</html>
