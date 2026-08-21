@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,350;0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:680px;background:#050810;font-family:'Source Sans 3',sans-serif;padding:30px}
+  .optlabel{color:#8b90a5;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px;padding-top:44px}
+  .optlabel:first-child{padding-top:0}
+  .card{background:#000;border-radius:18px;padding:20px}
+  a{color:inherit;text-decoration:none}
+
+  /* ============ OPTION 1: image banner (decorative) + big real-text tag below ============ */
+  .o1-card{background:#0A0E16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);margin-bottom:14px}
+  .o1-card:last-child{margin-bottom:0}
+  .o1-img{height:130px;overflow:hidden}
+  .o1-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .o1-body{padding:22px 24px}
+  .o1-tag{display:inline-block;font-size:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 18px;border-radius:999px;margin-bottom:14px}
+  .o1-card.d1 .o1-tag{background:rgba(34,211,238,.16);color:#22D3EE;border:1.5px solid rgba(34,211,238,.45)}
+  .o1-card.d2 .o1-tag{background:rgba(139,92,246,.16);color:#B79CF7;border:1.5px solid rgba(139,92,246,.45)}
+  .o1-title{font-size:28px;font-weight:800;color:#F8FAFC;line-height:1.1}
+  .o1-desc{margin-top:10px;font-size:14px;line-height:1.55;color:#CDD5E1}
+  .o1-link{margin-top:14px;font-size:13px;font-weight:700;display:inline-block}
+  .o1-card.d1 .o1-link{color:#8FE3F5}
+  .o1-card.d2 .o1-link{color:#C9B3FF}
+
+  /* ============ OPTION 2: no image, pure typographic chapter block ============ */
+  .o2-day{border-radius:16px;padding:32px 28px;margin-bottom:14px;position:relative;overflow:hidden}
+  .o2-day:last-child{margin-bottom:0}
+  .o2-day.d1{background:radial-gradient(600px 300px at 0% 0%,rgba(34,211,238,.14),transparent 60%),#0A0E16;border:1px solid rgba(34,211,238,.25)}
+  .o2-day.d2{background:radial-gradient(600px 300px at 100% 0%,rgba(139,92,246,.16),transparent 60%),#0A0E16;border:1px solid rgba(139,92,246,.25)}
+  .o2-tag{font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .o2-day.d1 .o2-tag{color:#22D3EE}
+  .o2-day.d2 .o2-tag{color:#B79CF7}
+  .o2-date{margin-left:10px;font-size:13px;color:#8b90a5;font-weight:500}
+  .o2-title{margin-top:10px;font-size:34px;font-weight:800;color:#fff;line-height:1.05}
+  .o2-desc{margin-top:10px;font-size:14.5px;line-height:1.55;color:#CDD5E1;max-width:440px}
+  .o2-link{margin-top:14px;font-size:13px;font-weight:700;display:inline-block}
+  .o2-day.d1 .o2-link{color:#8FE3F5}
+  .o2-day.d2 .o2-link{color:#C9B3FF}
+
+  /* ============ OPTION 3: session-row pattern (matches Email 2/3 style) ============ */
+  .o3-wrap{border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden}
+  .o3-row{display:flex;align-items:stretch}
+  .o3-row.d1{background:linear-gradient(90deg,rgba(34,211,238,.14) 0%,rgba(34,211,238,.02) 55%,transparent 100%)}
+  .o3-row.d2{background:linear-gradient(90deg,rgba(139,92,246,.14) 0%,rgba(139,92,246,.02) 55%,transparent 100%);border-top:1px solid rgba(255,255,255,.07)}
+  .o3-bar{width:5px;flex:0 0 auto}
+  .o3-row.d1 .o3-bar{background:#22D3EE}
+  .o3-row.d2 .o3-bar{background:#8B5CF6}
+  .o3-txt{padding:22px 18px;flex:1}
+  .o3-tag{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  .o3-row.d1 .o3-tag{color:#22D3EE}
+  .o3-row.d2 .o3-tag{color:#B79CF7}
+  .o3-title{margin-top:8px;font-size:24px;font-weight:800;color:#F8FAFC;line-height:1.15}
+  .o3-desc{margin-top:8px;font-size:13.5px;line-height:1.5;color:#CDD5E1;max-width:380px}
+  .o3-link{margin-top:10px;font-size:12.5px;font-weight:700;display:inline-block}
+  .o3-row.d1 .o3-link{color:#8FE3F5}
+  .o3-row.d2 .o3-link{color:#C9B3FF}
+  .o3-thumb{width:110px;flex:0 0 auto;padding:16px 16px 16px 0;display:flex;align-items:center}
+  .o3-thumb img{width:100%;height:96px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+
+  /* ============ OPTION 4: solid color header bar + panel below + corner thumbnail ============ */
+  .o4-card{border-radius:16px;overflow:hidden;background:#0A0E16;border:1px solid rgba(255,255,255,.10);margin-bottom:14px}
+  .o4-card:last-child{margin-bottom:0}
+  .o4-bar{padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+  .o4-card.d1 .o4-bar{background:linear-gradient(100deg,#0F6E80,#1B4A8F)}
+  .o4-card.d2 .o4-bar{background:linear-gradient(100deg,#5B3FA8,#7A3D8F)}
+  .o4-bar-label{font-size:18px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+  .o4-bar-date{font-size:13px;color:rgba(255,255,255,.75);font-weight:600}
+  .o4-body{padding:20px 22px;display:flex;gap:18px;align-items:center}
+  .o4-text{flex:1;min-width:0}
+  .o4-title{font-size:24px;font-weight:800;color:#F8FAFC;line-height:1.15}
+  .o4-desc{margin-top:8px;font-size:13.5px;line-height:1.55;color:#CDD5E1;text-wrap:pretty;max-width:34ch}
+  .o4-link{margin-top:10px;font-size:12.5px;font-weight:700;display:inline-block;white-space:nowrap}
+  .o4-card.d1 .o4-link{color:#8FE3F5}
+  .o4-card.d2 .o4-link{color:#C9B3FF}
+  .o4-thumb{flex:0 0 auto;border-radius:10px;overflow:hidden;background:#000;line-height:0}
+  .o4-thumb img{display:block;width:120px;height:auto;object-fit:contain}
+
+</style></head>
+<body>
+
+<div class="optlabel">Option 1 &middot; image banner on top (decorative only) + big real-text tag below &mdash; closest to the original bulletproof card, just louder</div>
+<div class="card">
+  <div class="o1-card d1">
+    <div class="o1-img"><img src="../drive-src/screens/day1/02 Lab 1 - Primary Correction.png"></div>
+    <div class="o1-body">
+      <div class="o1-tag">Day 1 &middot; Sept 29</div>
+      <div class="o1-title">Color Mode</div>
+      <div class="o1-desc">A full day inside Adobe's new grading workspace, closing with a live Q&amp;A with Alexis Van Hurkman.</div>
+      <a class="o1-link">View Day 1 program &rarr;</a>
+    </div>
+  </div>
+  <div class="o1-card d2">
+    <div class="o1-img"><img src="../drive-src/screens/day2/01 Find the Story in the Footage.jpg"></div>
+    <div class="o1-body">
+      <div class="o1-tag">Day 2 &middot; Sept 30</div>
+      <div class="o1-title">AI-Assisted Post</div>
+      <div class="o1-desc">A practical, editor-first tour of AI across the post workflow, from footage search to Firefly Boards.</div>
+      <a class="o1-link">View Day 2 program &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="optlabel">Option 2 &middot; no image at all, pure typographic chapter block with a color glow &mdash; can't look low-res because there's no photo to compress</div>
+<div class="card">
+  <div class="o2-day d1">
+    <span class="o2-tag">Day 1</span><span class="o2-date">Sept 29 &middot; 9 AM&ndash;5:30 PM ET</span>
+    <div class="o2-title">Color Mode</div>
+    <div class="o2-desc">A full day inside Adobe's new grading workspace: primary correction, secondaries and creative grading, and managing grades across an entire project.</div>
+    <a class="o2-link">View Day 1 program &rarr;</a>
+  </div>
+  <div class="o2-day d2">
+    <span class="o2-tag">Day 2</span><span class="o2-date">Sept 30 &middot; 9 AM&ndash;5:30 PM ET</span>
+    <div class="o2-title">AI-Assisted Post-Production</div>
+    <div class="o2-desc">A practical, editor-first tour of AI across the post workflow, from footage search to editing faster to Firefly Boards.</div>
+    <a class="o2-link">View Day 2 program &rarr;</a>
+  </div>
+</div>
+
+<div class="optlabel">Option 3 &middot; matches your Email 2/3 session-row pattern &mdash; consistent visual language across the whole campaign, small real thumbnail</div>
+<div class="card">
+  <div class="o3-wrap">
+    <div class="o3-row d1">
+      <div class="o3-bar"></div>
+      <div class="o3-txt">
+        <div class="o3-tag">Day 1 &middot; Sept 29</div>
+        <div class="o3-title">Color Mode</div>
+        <div class="o3-desc">A full day inside Adobe's new grading workspace, closing with a live Q&amp;A with Alexis Van Hurkman.</div>
+        <a class="o3-link">View Day 1 program &rarr;</a>
+      </div>
+      <div class="o3-thumb"><img src="../drive-src/screens/day1/02 Lab 1 - Primary Correction.png"></div>
+    </div>
+    <div class="o3-row d2">
+      <div class="o3-bar"></div>
+      <div class="o3-txt">
+        <div class="o3-tag">Day 2 &middot; Sept 30</div>
+        <div class="o3-title">AI-Assisted Post</div>
+        <div class="o3-desc">A practical, editor-first tour of AI across the post workflow, from footage search to Firefly Boards.</div>
+        <a class="o3-link">View Day 2 program &rarr;</a>
+      </div>
+      <div class="o3-thumb"><img src="../drive-src/screens/day2/01 Find the Story in the Footage.jpg"></div>
+    </div>
+  </div>
+</div>
+
+<div class="optlabel">Option 4 &middot; solid color header bar (not photo) + text panel + small corner thumbnail &mdash; the day identity comes from color, not a compressed photo</div>
+<div class="card">
+  <div class="o4-card d1">
+    <div class="o4-bar"><span class="o4-bar-label">Day 1</span><span class="o4-bar-date">Sept 29 &middot; 9 AM&ndash;5:30 PM ET</span></div>
+    <div class="o4-body">
+      <div class="o4-text">
+        <div class="o4-title">Color Mode</div>
+        <div class="o4-desc">A full day inside Adobe's new grading workspace, closing with a live Q&amp;A with Alexis Van Hurkman.</div>
+        <a class="o4-link">View Day 1 program &rarr;</a>
+      </div>
+      <div class="o4-thumb"><img src="../drive-src/screens/day1/02 Lab 1 - Primary Correction.png"></div>
+    </div>
+  </div>
+  <div class="o4-card d2">
+    <div class="o4-bar"><span class="o4-bar-label">Day 2</span><span class="o4-bar-date">Sept 30 &middot; 9 AM&ndash;5:30 PM ET</span></div>
+    <div class="o4-body">
+      <div class="o4-text">
+        <div class="o4-title">AI-Assisted Post</div>
+        <div class="o4-desc">A practical, editor-first tour of AI across the post workflow, from footage search to Firefly Boards.</div>
+        <a class="o4-link">View Day 2 program &rarr;</a>
+      </div>
+      <div class="o4-thumb"><img src="../drive-src/screens/day2/01 Find the Story in the Footage.jpg"></div>
+    </div>
+  </div>
+</div>
+
+</body></html>
