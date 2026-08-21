@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPIP26 — All 7 Emails (Full Content)</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0d16;font-family:-apple-system,'Source Sans 3',Arial,sans-serif}
+  .top{padding:40px 24px 20px;text-align:center;color:#f2f4fa}
+  .top h1{font-size:24px;font-weight:800}
+  .top p{margin-top:8px;color:#8b90a5;font-size:14px}
+  .section{padding:30px 0 10px}
+  .label{max-width:660px;margin:0 auto 14px;padding:0 24px;display:flex;align-items:center;gap:12px}
+  .label .n{width:28px;height:28px;border-radius:50%;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.4);
+    color:#22D3EE;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .label .t{color:#f2f4fa;font-size:15px;font-weight:700}
+  .label .d{color:#656c8a;font-size:12px}
+  iframe{display:block;width:100%;max-width:700px;margin:0 auto;border:0}
+  hr{border:0;border-top:1px solid rgba(255,255,255,.08);margin:30px auto;max-width:660px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Modern Post in Premiere — Full Email Campaign</h1>
+  <p>All 7 emails, full content, in send order. FMC &times; Adobe · Sept 29&ndash;30, 2026</p>
+</div>
+
+<div class="section">
+  <div class="label"><div class="n">1</div><div><div class="t">Launch Announcement</div><div class="d">sends Mon Aug 24</div></div></div>
+  <iframe id="f1" src="MPIP26-Email-01-Launch-Announcement.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">2</div><div><div class="t">Color Mode Deep Dive</div><div class="d">sends Thu Sept 3</div></div></div>
+  <iframe id="f2" src="MPIP26-Email-02-ColorMode-DeepDive.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">3</div><div><div class="t">AI Track Deep Dive</div><div class="d">sends Thu Sept 10</div></div></div>
+  <iframe id="f3" src="MPIP26-Email-03-AITrack-DeepDive.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">4</div><div><div class="t">One Week Out</div><div class="d">sends Tue Sept 22</div></div></div>
+  <iframe id="f4" src="MPIP26-Email-04-OneWeekOut.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">5</div><div><div class="t">Last Call</div><div class="d">sends Mon Sept 28</div></div></div>
+  <iframe id="f5" src="MPIP26-Email-05-LastCall.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">6</div><div><div class="t">In-Cart Push 1</div><div class="d">sends Wed Aug 26</div></div></div>
+  <iframe id="f6" src="MPIP26-InCart-01.html"></iframe>
+</div>
+<hr>
+<div class="section">
+  <div class="label"><div class="n">7</div><div><div class="t">In-Cart Push 2</div><div class="d">sends Thu Sept 24</div></div></div>
+  <iframe id="f7" src="MPIP26-InCart-02.html"></iframe>
+</div>
+
+<script>
+  document.querySelectorAll('iframe').forEach(function(f){
+    f.addEventListener('load', function(){
+      try{
+        var h = f.contentWindow.document.documentElement.scrollHeight;
+        f.style.height = (h + 20) + 'px';
+      }catch(e){ f.style.height = '2400px'; }
+    });
+  });
+</script>
+</body>
+</html>
