@@ -40,7 +40,10 @@ isEnabledForEmailV3Rendering: true
     .dayTxt{ display:block!important; width:100%!important; padding-bottom:16px!important; }
     .dayGap{ display:none!important; }
     .dayThumb{ display:block!important; width:100%!important; text-align:left!important; }
-    .dayThumb img{ width:150px!important; height:auto!important; }
+    .dayThumb img{ width:175px!important; height:auto!important; }
+    .advH{ padding:32px 22px 34px!important; }
+    .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
+    .advSub{ font-size:16px!important; }
     .priceTbl, .priceTbl tr, .priceTbl td{ display:block!important; width:100%!important; text-align:center!important; }
     td.priceDiv{ display:none!important; }
     .priceCell{ padding:4px 0!important; }
@@ -52,7 +55,7 @@ isEnabledForEmailV3Rendering: true
   <div id="preview_text" style="display:none!important; max-height:0; overflow:hidden; mso-hide:all; opacity:0; color:transparent;">
     {% text "preview_text"
       label="Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
-      value="FMC and Adobe bring two days of live online training on Color Mode and AI-assisted post-production.",
+      value="Adobe's new Color Mode and AI-assisted editing, taught live by FMC and Adobe. Sept 29-30.",
       no_wrapper=True
     %}
   </div>
@@ -63,20 +66,34 @@ isEnabledForEmailV3Rendering: true
     <!--[if mso]><table role="presentation" width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
     <table role="presentation" class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed; width:100%; max-width:620px; margin:0 auto; background:#000000; border:1px solid rgba(255,255,255,0.18); border-radius:18px; overflow:hidden; box-shadow:0 18px 60px rgba(0,0,0,.7);">
 
-      <!-- HERO (headline + FMC x Adobe lockup baked in) -->
-      <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
-        <img src="assets/hero-launch-620x320.jpg" width="620" height="320" alt="Modern Post in Premiere. Color Mode + AI-Assisted Post-Production. Live Online Training, Sept 29-30, 2026." style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      <!-- ADOBE MASTHEAD: white logo bar (FMC left / Adobe right) -->
+      <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF; padding:22px 36px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td valign="middle" align="left"><a href="https://www.fmctraining.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_masthead_fmc" target="_blank"><img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/fmc_logo_horizontal_dark.png" width="128" height="23" alt="FMC" style="display:block; border:0;"></a></td>
+          <td valign="middle" align="right"><a href="https://www.adobe.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_masthead_adobe" target="_blank"><img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Wordmark%20Logo.png" width="97" height="32" alt="Adobe" style="display:block; border:0;"></a></td>
+        </tr></table>
       </td></tr>
 
-      <!-- SUBHEAD -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:26px 36px 0;">
-        <div class="subH" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:22px; font-weight:600; line-height:1.28; letter-spacing:-.015em; color:#22D3EE; max-width:460px; margin:0 auto; text-wrap:balance;">Color grading was built for specialists. Not anymore.</div>
+      <!-- ADOBE HEADER BLOCK: light ground, eyebrow, display headline, standfirst -->
+      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:44px 44px 46px;">
+        <div class="advEyebrow" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.20em; text-transform:uppercase; color:#5A5A5A; margin-bottom:20px;">FMC &times; Adobe Present</div>
+        <h1 class="advHero" style="margin:0 0 20px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Color, reinvented. Editing, accelerated. Both live with Adobe.</h1>
+        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:520px;">Two of the biggest changes in Premiere are landing at once: Adobe&rsquo;s new Color Mode replaces the old grading workflow, and AI is changing how editors search, cut, and finish. FMC is partnering with Adobe to teach both, live.</div>
+      </td></tr>
+
+      <!-- ADOBE SPECTRUM BAR -->
+      <tr><td bgcolor="#F5F5F5" style="background:#F5F5F5; font-size:0; line-height:0;">
+        <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      </td></tr>
+
+      <!-- HERO VISUAL: approved Adobe Color Mode asset -->
+      <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
+        <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Mode/Split%20Grade%20with%20Adjustment%20Panels.png" width="620" height="465" alt="Adobe Color Mode split grade with adjustment panels" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
       </td></tr>
 
       <!-- INTRO -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:18px 36px 0;">
-        <p style="margin:0 auto 14px; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;">For decades, color correction belonged to colorists. Editors saw it as too technical, too intimidating, a world apart from the creative flow of storytelling. Adobe&rsquo;s new Color Mode changes that, and FMC is partnering with Adobe to teach it.</p>
-        <p style="margin:0 auto 0; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_intro_link" style="color:#F5F7FA; font-weight:700; text-decoration:none;">Modern Post in Premiere</a> is a two-day live online training, <span style="color:#22D3EE; font-weight:600; white-space:nowrap;">Sept. 29&ndash;30</span>, built around the two biggest shifts in Premiere right now.</p>
+      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:30px 36px 0;">
+        <p style="margin:0 auto 0; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_intro_link" style="color:#F5F7FA; font-weight:700; text-decoration:none;">Modern Post in Premiere</a> is a two-day live online training, <span style="color:#22D3EE; font-weight:600; white-space:nowrap;">Sept. 29&ndash;30</span>. One day on Color Mode. One day on AI-assisted post.</p>
       </td></tr>
 
       <!-- CTA: REGISTER NOW -->
@@ -113,7 +130,7 @@ isEnabledForEmailV3Rendering: true
                 <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:13px;"><tr><td bgcolor="#0A0E16" style="background:linear-gradient(100deg,rgba(34,211,238,.16),rgba(34,211,238,.05)); border:1.5px solid rgba(34,211,238,.55); border-radius:100px; padding:10px 20px 13px 24px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day1_link#agenda" target="_blank" style="display:inline-block; mso-line-height-rule:exactly; line-height:16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#8FE3F5; text-decoration:none; white-space:nowrap;">View Day 1 Program</a></td></tr></table>
               </td>
               <td valign="middle" width="28" class="dayGap" style="font-size:1px; line-height:1px;">&nbsp;</td>
-              <td valign="middle" width="150" class="dayThumb" style="padding:6px 6px 6px 18px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day1_thumb#agenda" target="_blank"><img src="assets/day1-thumb-full.jpg" width="150" height="113" alt="Day 1 Color Mode preview" style="display:block; border-radius:8px; border:0;"></a></td>
+              <td valign="middle" width="175" class="dayThumb" style="padding:6px 6px 6px 20px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day1_thumb#agenda" target="_blank"><img src="assets/day1-thumb-full.jpg" width="175" height="131" alt="Day 1 Color Mode preview" style="display:block; border-radius:8px; border:0;"></a></td>
             </tr></table>
           </td></tr>
         </table>
@@ -136,7 +153,7 @@ isEnabledForEmailV3Rendering: true
                 <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:13px;"><tr><td bgcolor="#0A0E16" style="background:linear-gradient(100deg,rgba(139,92,246,.18),rgba(139,92,246,.05)); border:1.5px solid rgba(139,92,246,.55); border-radius:100px; padding:10px 20px 13px 24px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day2_link#agenda" target="_blank" style="display:inline-block; mso-line-height-rule:exactly; line-height:16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#C9B3FF; text-decoration:none; white-space:nowrap;">View Day 2 Program</a></td></tr></table>
               </td>
               <td valign="middle" width="28" class="dayGap" style="font-size:1px; line-height:1px;">&nbsp;</td>
-              <td valign="middle" width="150" class="dayThumb" style="padding:6px 6px 6px 18px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day2_thumb#agenda" target="_blank"><img src="assets/day2-thumb-full.jpg" width="150" height="86" alt="Day 2 AI-Assisted Post-Production preview" style="display:block; border-radius:8px; border:0;"></a></td>
+              <td valign="middle" width="175" class="dayThumb" style="padding:6px 6px 6px 20px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_day2_thumb#agenda" target="_blank"><img src="assets/day2-thumb-full.jpg" width="175" height="100" alt="Day 2 AI-Assisted Post-Production preview" style="display:block; border-radius:8px; border:0;"></a></td>
             </tr></table>
           </td></tr>
         </table>
@@ -153,10 +170,10 @@ isEnabledForEmailV3Rendering: true
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#080b12" style="background:#080b12; border:1px solid rgba(255,255,255,.10); border-radius:16px;">
           <tr><td align="center" style="padding:28px 26px;">
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#8b90a5; margin-bottom:14px;">Event Details</div>
-            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:19px; line-height:1.5; color:#F8FAFC;">September 29&ndash;30, 2026</div>
-            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:400; font-size:19px; line-height:1.5; color:#F8FAFC;">9:00 AM to 5:30 PM ET</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:22px; line-height:1.5; color:#F8FAFC;">September 29&ndash;30, 2026</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:250; font-size:19px; line-height:1.5; color:#F8FAFC;">9:00 AM to 5:30 PM ET</div>
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:19px; line-height:1.5; color:#22D3EE;">Live on Zoom</div>
-            <p style="margin:18px auto 0; max-width:380px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:14.5px; line-height:1.65; color:#AAB2C0; text-align:center; text-wrap:pretty;">Every ticket includes real-time captions, professionally dubbed recordings on request, and 180 days of access to the sessions included with your registration.</p>
+            <p style="margin:18px auto 0; max-width:380px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:16.5px; line-height:1.65; color:#AAB2C0; text-align:center; text-wrap:pretty;">Every ticket includes real-time captions, professionally dubbed recordings on request, and 180 days of access to the sessions included with your registration.</p>
             <div style="height:1px; background:rgba(255,255,255,.10); margin:22px auto; max-width:200px;"></div>
             <table role="presentation" cellpadding="0" cellspacing="0" align="center" class="priceTbl"><tr>
               <td valign="middle" class="priceCell" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:400; font-size:20px; line-height:1.4; color:#ffffff; white-space:nowrap;">Single day: $99</td>
@@ -172,11 +189,11 @@ isEnabledForEmailV3Rendering: true
         <table role="presentation" cellpadding="0" cellspacing="0" class="ctaTbl"><tr>
           <td class="ctaCell" valign="middle">
             <!--[if mso]>
-            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_view_program#agenda" style="height:38px;v-text-anchor:middle;width:150px;" arcsize="50%" strokecolor="#5b5570" fillcolor="#000000">
-              <center style="color:#E6EAF0;font-family:'Source Sans 3',Arial,sans-serif;font-size:13px;font-weight:400;">View Program</center>
+            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_view_program#agenda" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="50%" strokecolor="#5b5570" fillcolor="#000000">
+              <center style="color:#E6EAF0;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">View Program</center>
             </v:roundrect>
             <![endif]-->
-            <!--[if !mso]><!--><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_view_program#agenda" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:9px 22px 12px; border:1px solid rgba(255,255,255,0.32); border-radius:100px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13px; font-weight:400; color:#E6EAF0;">View Program</a><!--<![endif]--></td>
+            <!--[if !mso]><!--><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_view_program#agenda" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; border:1px solid rgba(255,255,255,0.32); border-radius:100px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#E6EAF0;">View Program</a><!--<![endif]--></td>
           <td class="ctaGap" style="width:18px; font-size:1px; line-height:1px;">&nbsp;</td>
           <td class="ctaCell" valign="middle">
             <!--[if mso]>
@@ -199,6 +216,8 @@ isEnabledForEmailV3Rendering: true
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:16.5px; color:#AAB2C0; margin-bottom:5px;">Questions about the event?</div>
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:18px; font-weight:700; color:#F5F7FA;">Megan Belka</div>
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13.4px; color:#AAB2C0; margin-top:4px;">Event Manager, FMC Training &middot; <a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_contact_megan&contact=megan#contact" target="_blank" style="color:#8FE3F5; text-decoration:none;">meganb@fmctraining.com</a></div>
+            <div style="height:1px; background:rgba(255,255,255,.10); margin:16px auto; max-width:200px;"></div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13.4px; line-height:1.6; color:#AAB2C0;">Teams of 5 or more can contact Elise O&rsquo;Brien &middot; <a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=launch_contact_elise&contact=elise#contact" target="_blank" style="color:#8FE3F5; text-decoration:none;">eliseo@fmctraining.com</a></div>
           </td>
         </tr></table>
       </td></tr>

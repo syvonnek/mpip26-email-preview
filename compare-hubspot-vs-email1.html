@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Email 1 vs HubSpot draft — side by side</title>
+<style>
+  :root{--bg:#0a0b0f;--panel:#111319;--hair:rgba(255,255,255,.12);--ink:#f2f4fa;--dim:#8b90a5;--cyan:#22D3EE;--magenta:#E34FCB}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Source Sans 3",sans-serif}
+  header{padding:20px 28px;border-bottom:1px solid var(--hair);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  header h1{font-size:17px;font-weight:600;margin:0}
+  header p{margin:4px 0 0;color:var(--dim);font-size:13px}
+  .diffs{padding:16px 28px;border-bottom:1px solid var(--hair);background:var(--panel);display:flex;gap:28px;flex-wrap:wrap;font-size:13px;color:var(--dim)}
+  .diffs b{color:var(--ink)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 132px);min-height:600px}
+  .col{display:flex;flex-direction:column;border-right:1px solid var(--hair)}
+  .col:last-child{border-right:0}
+  .col h2{margin:0;padding:12px 20px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--panel);border-bottom:1px solid var(--hair)}
+  .col h2 .tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:10.5px;letter-spacing:.04em;font-weight:700}
+  .col.email1 h2 .tag{background:rgba(34,211,238,.15);color:var(--cyan)}
+  .col.hubspot h2 .tag{background:rgba(227,79,203,.15);color:var(--magenta)}
+  .col iframe{flex:1;border:0;width:100%;background:#fff}
+  @media (max-width:900px){.cols{grid-template-columns:1fr;height:auto}.col iframe{height:900px}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>MPIP26 Email 1 vs. HubSpot draft</h1>
+    <p>Nothing has been merged yet — this is just the two versions rendered side by side for comparison.</p>
+  </div>
+</header>
+<div class="diffs">
+  <div><b>Headline:</b> "Color grading was built for specialists" vs. "Color grading. Reimagined for editors."</div>
+  <div><b>Day names:</b> "Color Mode" / "AI-Assisted Post-Production" vs. "Make Color Yours" / "Put AI to Work"</div>
+  <div><b>Structure:</b> Event Details card + program buttons + expert section vs. shorter/condensed, none of those</div>
+  <div><b>Pricing:</b> $99 / $149 — matches on both</div>
+</div>
+<div class="cols">
+  <div class="col email1">
+    <h2>MPIP26-Email-01-Launch-Announcement.html <span class="tag">Local, polished, flagship</span></h2>
+    <iframe src="MPIP26-Email-01-Launch-Announcement.html"></iframe>
+  </div>
+  <div class="col hubspot">
+    <h2>HubSpot draft <span class="tag">New copy, condensed</span></h2>
+    <iframe src="hubspot-draft-preview.html"></iframe>
+  </div>
+</div>
+</body>
+</html>
