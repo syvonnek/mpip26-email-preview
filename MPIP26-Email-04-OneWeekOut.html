@@ -23,16 +23,52 @@ isEnabledForEmailV3Rendering: true
   img{ -ms-interpolation-mode:bicubic; border:0; height:auto; line-height:100%; outline:none; text-decoration:none; }
   body{ margin:0; padding:0; width:100%!important; background:#030611; }
   a{ text-decoration:none; }
+  .groupQuoteBr{ display:none; }
+  .priceBr{ display:none; }
   @media screen and (max-width:640px){
     .container{ width:100%!important; }
     .px{ padding-left:22px!important; padding-right:22px!important; }
     .subH{ font-size:20px!important; }
     .ctaCell{ display:block!important; width:100%!important; }
     .ctaTbl{ width:100%!important; }
+    .ctaTbl a{ display:block!important; text-align:center!important; }
     .ctaGap{ height:12px!important; line-height:12px!important; font-size:12px!important; display:block!important; }
     .signoffPad{ padding-top:26px!important; }
-    .zonewrap{ display:block!important; }
-    .zonecell{ display:block!important; width:100%!important; padding:0 0 14px 0!important; border-right:0!important; }
+    .jcard{ padding:20px 18px!important; }
+    .jph{ display:block!important; padding:0 0 12px 0!important; text-align:center!important; }
+    .jph img{ margin:0 auto!important; }
+    .jtx{ display:block!important; text-align:center!important; }
+    .logoname{ font-size:17px!important; }
+    .dayTxt{ display:block!important; width:100%!important; padding-bottom:16px!important; }
+    .dayGap{ display:none!important; }
+    .dayThumb{ display:block!important; width:100%!important; text-align:left!important; padding:0!important; }
+    .dayThumb img{ width:100%!important; max-width:100%!important; height:auto!important; }
+    .dayTime{ display:none!important; }
+    .advH{ padding:32px 22px 34px!important; }
+    .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
+    .advSub{ font-size:16px!important; }
+    .advPill{ margin-top:20px!important; }
+    .advPillPad{ padding:7px 16px 7px 12px!important; }
+    .advPillIcon{ padding-right:9px!important; }
+    .advPillImg{ width:26px!important; height:26px!important; }
+    .advPillDot{ padding:0 8px!important; }
+    .advPillTxt{ font-size:12.3px!important; letter-spacing:.05em!important; }
+    .advPillDate{ font-size:12.8px!important; letter-spacing:.01em!important; }
+    .priceDiv{ display:none!important; }
+    .priceBr{ display:block!important; }
+    .priceCell{ display:inline-block!important; padding:4px 0!important; }
+    .groupQuoteBr{ display:inline!important; }
+  }
+  /* Narrow phones + HubSpot's mobile preview pane: drop the year so the pill stays on one line */
+  @media screen and (max-width:365px){
+    .advH{ padding:28px 18px 30px!important; }
+    .advPillYear{ display:none!important; }
+    .advPillPad{ padding:7px 13px 7px 9px!important; }
+    .advPillIcon{ padding-right:8px!important; }
+    .advPillImg{ width:24px!important; height:24px!important; }
+    .advPillDot{ padding:0 7px!important; }
+    .advPillTxt{ font-size:12px!important; letter-spacing:.04em!important; }
+    .advPillDate{ font-size:12.5px!important; letter-spacing:0!important; }
   }
 </style>
 </head>
@@ -40,7 +76,7 @@ isEnabledForEmailV3Rendering: true
   <div id="preview_text" style="display:none!important; max-height:0; overflow:hidden; mso-hide:all; opacity:0; color:transparent;">
     {% text "preview_text"
       label="Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
-      value="Live September 29-30 on Zoom, with local start times for the Americas, Europe, and APAC.",
+      value="Live online training, global access, and 180 days to revisit what you learn.",
       no_wrapper=True
     %}
   </div>
@@ -50,21 +86,59 @@ isEnabledForEmailV3Rendering: true
 
     <!--[if mso]><table role="presentation" width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
     <table role="presentation" class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed; width:100%; max-width:620px; margin:0 auto; background:#000000; border:1px solid rgba(255,255,255,0.18); border-radius:18px; overflow:hidden; box-shadow:0 18px 60px rgba(0,0,0,.7);">
-
-      <!-- HERO (FMC x Adobe lockup baked in) -->
-      <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
-        <img src="assets/hero-launch-620x320.jpg" width="620" height="320" alt="Modern Post in Premiere. Live Online Training, Sept 29-30, 2026." style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      <!-- ADOBE MASTHEAD: white logo bar (FMC left / Adobe right) -->
+      <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF; padding:22px 36px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td valign="middle" align="left"><a href="https://www.fmctraining.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_masthead_fmc" target="_blank"><img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/fmc_logo_horizontal_dark.png" width="128" height="23" alt="FMC" style="display:block; border:0; vertical-align:middle;"></a></td>
+          <td valign="middle" align="right"><a href="https://www.adobe.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_masthead_adobe" target="_blank"><img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Wordmark%20Logo.png" width="91" height="30" alt="Adobe" style="display:block; border:0; vertical-align:middle;"></a></td>
+        </tr></table>
       </td></tr>
 
-      <!-- SUBHEAD -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:26px 36px 0;">
-        <div class="subH" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:22px; font-weight:600; line-height:1.28; letter-spacing:-.015em; color:#22D3EE; max-width:480px; margin:0 auto; text-wrap:balance;">One week out. Here is how to join from anywhere.</div>
+      <!-- ADOBE HEADER BLOCK: light ground, eyebrow, display headline, standfirst -->
+      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:44px 44px 46px;">
+        <div class="advEyebrow" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.20em; text-transform:uppercase; color:#5A5A5A; margin-bottom:20px;">One week to go</div>
+        <h1 class="advHero" style="margin:0 0 20px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Your calendar only needs two days. Your access lasts 180.</h1>
+        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">Join live on September 29&ndash;30, or build the experience around your own schedule.</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td class="advPillPad" bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:8px 20px 8px 14px;">
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td valign="middle" class="advPillIcon" style="padding-right:11px;"><img class="advPillImg" src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-app-icon.png" width="29" height="29" alt="" style="display:block; border-radius:6px; border:0;"></td>
+            <td valign="middle" class="advPillTxt" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#101010; white-space:nowrap;">Live Online Training</td>
+            <td valign="middle" class="advPillDot" style="padding:0 10px; color:#8B5CF6; font-size:14px; line-height:1;">&bull;</td>
+            <td valign="middle" class="advPillDate" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.04em; color:#0F8A9E; white-space:nowrap;">SEPT 29&ndash;30<span class="advPillYear">, 2026</span></td>
+          </tr></table>
+        </td></tr></table>
+      </td></tr>
+
+      <!-- ADOBE SPECTRUM BAR -->
+      <tr><td bgcolor="#F5F5F5" style="background:#F5F5F5; font-size:0; line-height:0;">
+        <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      </td></tr>
+
+      <!-- HERO VISUAL -->
+      <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
+        <img src="https://syvonnek.github.io/mpip26-email-preview/assets/hero-launch-620x320.jpg" width="620" height="320" alt="Modern Post in Premiere. Live online training, Sept 29-30, 2026." style="display:block; width:100%; max-width:100%; height:auto; border:0;">
       </td></tr>
 
       <!-- INTRO -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:18px 36px 0;">
-        <p style="margin:0 auto 14px; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;">Modern Post in Premiere goes live next Tuesday, September 29, and runs through Wednesday, September 30. Find your local start time and enjoy 180 days of replay access.</p>
-        <p style="margin:0 auto; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;">Day 1 moves from the correct color pipeline through scalable grade management. Day 2 covers footage search, take comparison, missing visuals, audio repair, and Firefly Boards.</p>
+      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:30px 36px 0;">
+        <p style="margin:0 auto 0; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:600; font-size:17px; line-height:1.5; color:#F5F7FA; text-align:center; text-wrap:balance;">One week out. Here is how to join from anywhere.</p>
+      </td></tr>
+
+      <!-- CTA -->
+      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:24px 36px 0;">
+<!--[if mso]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register_top#pricing" style="height:40px;v-text-anchor:middle;width:180px;" arcsize="50%" stroke="f" fillcolor="#4F7CFF">
+          <center style="color:#FFFFFF;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">Register Now &rarr;</center>
+        </v:roundrect>
+        <![endif]-->
+        <!--[if !mso]><!-->
+        <table role="presentation" cellpadding="0" cellspacing="0" align="center"><tr><td bgcolor="#4F7CFF" style="background:linear-gradient(100deg,#22D3EE 0%,#4F7CFF 34%,#8B5CF6 67%,#E34FCB 100%); border-radius:100px;"><a class="vcta" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register_top#pricing" target="_blank" style="display:inline-block; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; white-space:nowrap; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#FFFFFF; letter-spacing:.01em;"><span style="position:relative; top:1px;">Register Now</span><span style="vertical-align:middle; padding-left:7px;">&rarr;</span></a></td></tr></table>
+        <!--<![endif]-->
+      </td></tr>
+
+      <!-- DIVIDER -->
+      <tr><td class="px" bgcolor="#000000" style="background:#000000; padding:30px 36px 0;">
+        <div style="height:1px; background:rgba(255,255,255,.12); font-size:0; line-height:0;">&nbsp;</div>
       </td></tr>
 
       <!-- TIME ZONES -->
@@ -93,55 +167,50 @@ isEnabledForEmailV3Rendering: true
         <p style="margin:0 auto; max-width:492px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.62; color:#D7DCE5; text-align:center; text-wrap:balance;">Every session runs with real-time captions, professionally dubbed recordings are available on request, and you get 180 days of on-demand access to the recordings included with your ticket. If a session falls outside your working hours, it will be waiting for you.</p>
       </td></tr>
 
-      <!-- DIVIDER -->
-      <tr><td class="px" bgcolor="#000000" style="background:#000000; padding:28px 36px 0;">
-        <div style="height:1px; background:rgba(255,255,255,.12); font-size:0; line-height:0;">&nbsp;</div>
+      <!-- EVENT DETAILS (cyan border; CTAs + group quote live inside this card) -->
+      <tr><td class="px" bgcolor="#000000" style="background:#000000; padding:46px 30px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#080b12" style="background:#080b12; border:1px solid rgba(34,211,238,.22); border-radius:16px;">
+          <tr><td align="center" style="padding:28px 26px;">
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#8b90a5; margin-bottom:14px;">Event Details</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:22px; line-height:1.5; color:#F8FAFC;">September 29&ndash;30, 2026</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:250; font-size:19px; line-height:1.5; color:#F8FAFC;">9:00 AM to 5:30 PM ET</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:19px; line-height:1.5; color:#22D3EE;">Live on Zoom</div>
+            <p style="margin:18px auto 0; max-width:380px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:15.5px; line-height:1.45; color:#AAB2C0; text-align:center; text-wrap:pretty;">Every ticket includes real-time captions, professionally dubbed recordings on request, and 180 days of access to the sessions included with your registration.</p>
+            <div style="height:1px; background:rgba(255,255,255,.10); margin:22px auto; max-width:200px;"></div>
+            <div style="text-align:center;">
+              <span class="priceCell" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:400; font-size:20px; line-height:1.4; color:#ffffff; white-space:nowrap;">Single day: $99</span>
+              <span class="priceDiv" style="display:inline-block; width:1px; height:22px; background:rgba(255,255,255,.22); margin:0 16px; vertical-align:middle; border-radius:1px;"></span><br class="priceBr">
+              <span class="priceCell" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:20px; line-height:1.4; color:#ffffff; white-space:nowrap;">Both days: $149</span>
+            </div>
+
+            <!-- CTA ROW: VIEW PROGRAM + REGISTER (identical sizing) -->
+            <table role="presentation" cellpadding="0" cellspacing="0" class="ctaTbl" style="margin-top:26px;"><tr>
+              <td class="ctaCell" valign="middle">
+                <!--[if mso]>
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_view_program#agenda" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="50%" strokecolor="#5b5570" fillcolor="#000000">
+                  <center style="color:#E6EAF0;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">View Program</center>
+                </v:roundrect>
+                <![endif]-->
+                <!--[if !mso]><!--><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_view_program#agenda" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; border:1px solid rgba(255,255,255,0.32); border-radius:100px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#E6EAF0;"><span style="position:relative; top:1px;">View Program</span></a><!--<![endif]--></td>
+              <td class="ctaGap" style="width:18px; font-size:1px; line-height:1px;">&nbsp;</td>
+              <td class="ctaCell" valign="middle">
+                <!--[if mso]>
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register_bottom#pricing" style="height:40px;v-text-anchor:middle;width:180px;" arcsize="50%" stroke="f" fillcolor="#4F7CFF">
+                  <center style="color:#FFFFFF;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">Register Now &rarr;</center>
+                </v:roundrect>
+                <![endif]-->
+                <!--[if !mso]><!--><table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#4F7CFF" style="background:linear-gradient(100deg,#22D3EE 0%,#4F7CFF 34%,#8B5CF6 67%,#E34FCB 100%); border-radius:100px;"><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register_bottom#pricing" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#FFFFFF; letter-spacing:.01em;"><span style="position:relative; top:1px;">Register Now</span><span style="vertical-align:middle; padding-left:7px;">&rarr;</span></a></td></tr></table><!--<![endif]--></td>
+            </tr></table>
+
+            <!-- GROUP QUOTE -->
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:14px; line-height:1.6; color:#AAB2C0; text-align:center; margin-top:22px;">Registering five or more?<br class="groupQuoteBr"> <a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_group_quote&contact=elise#contact" target="_blank" style="color:#8FE3F5; font-weight:600; text-decoration:none;">Contact Elise O&rsquo;Brien</a> for a group quote.</div>
+          </td></tr>
+        </table>
       </td></tr>
 
-      <!-- GROUP QUOTE -->
-      <tr><td class="px" bgcolor="#000000" style="background:#000000; padding:26px 30px 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#080b12" style="background:#080b12; border:1px solid rgba(139,92,246,.25); border-radius:16px;"><tr>
-          <td align="center" style="padding:22px 28px;">
-            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; color:#F5F7FA; text-wrap:balance;">Bringing your team? Groups of 5+ get discounted rates.</div>
-            <p style="margin:10px auto 0; max-width:440px; font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13.5px; line-height:1.55; color:#AAB2C0; text-wrap:pretty;">When the whole post team learns the same color and AI workflows in the same week, the shorthand starts on day one. Contact Elise O&rsquo;Brien, Senior Director of Events, for a group quote.</p>
-            <div style="margin-top:14px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_group_quote&contact=elise#contact" target="_blank" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:13px; font-weight:700; color:#B79CF7;">Get a group quote &rarr;</a></div>
-          </td>
-        </tr></table>
-      </td></tr>
-
-      <!-- PRICING -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:28px 36px 0;">
-        <p style="margin:0 auto; max-width:470px; font-family:'Source Sans 3',Arial,sans-serif; font-size:17px; font-weight:400; line-height:1.36; letter-spacing:-.01em; color:#FFFFFF; text-align:center; text-wrap:balance;">Single day: $99. <span style="font-weight:700;">Both days: $149.</span></p>
-      </td></tr>
-
-      <!-- CTA ROW -->
-      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:24px 36px 0;">
-        <table role="presentation" cellpadding="0" cellspacing="0" class="ctaTbl"><tr>
-          <td class="ctaCell" valign="middle">
-            <!--[if mso]>
-            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_program#agenda" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="50%" strokecolor="#5b5570" fillcolor="#000000">
-              <center style="color:#E6EAF0;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">View Program</center>
-            </v:roundrect>
-            <![endif]-->
-            <!--[if !mso]><!--><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_program#agenda" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; border:1px solid rgba(255,255,255,0.32); border-radius:100px; font-family:\'Source Sans 3\',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#E6EAF0;"><span style="position:relative; top:1px;">View Program</span></a><!--<![endif]--></td>
-          <td class="ctaGap" style="width:18px; font-size:1px; line-height:1px;">&nbsp;</td>
-          <td class="ctaCell" valign="middle">
-            <!--[if mso]>
-            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register#pricing" style="height:38px;v-text-anchor:middle;width:160px;" arcsize="50%" stroke="f" fillcolor="#4F7CFF">
-              <center style="color:#FFFFFF;font-family:'Source Sans 3',Arial,sans-serif;font-size:13.5px;font-weight:700;">Register Now &rarr;</center>
-            </v:roundrect>
-            <![endif]-->
-            <!--[if !mso]><!--><table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#4F7CFF" style="background:linear-gradient(100deg,#22D3EE 0%,#4F7CFF 34%,#8B5CF6 67%,#E34FCB 100%); border-radius:100px;"><a class="btn" href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_register#pricing" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:10px 20px 13px 24px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#FFFFFF; letter-spacing:.01em;">Register Now<span style="vertical-align:middle; padding-left:7px;">&rarr;</span></a></td></tr></table><!--<![endif]--></td>
-        </tr></table>
-      </td></tr>
-
-      <!-- SIGNOFF -->
-      <tr><td class="px signoffPad" align="center" bgcolor="#000000" style="background:#000000; padding:30px 36px 34px;">
-        <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15px; font-weight:700; color:#FFFFFF; text-align:center;">- FMC Team</div>
-      </td></tr>
-      <!-- QUESTIONS CONTACT -->
+      <!-- QUESTIONS CONTACT (muted border, text only, no photo) -->
       <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:26px 36px 28px;">
-        <table role="presentation" cellpadding="0" cellspacing="0" bgcolor="#080b12" style="background:#080b12; border:1px solid rgba(34,211,238,.22); border-radius:16px; width:100%;"><tr>
+        <table role="presentation" cellpadding="0" cellspacing="0" bgcolor="#080b12" style="background:#080b12; border:1px solid rgba(255,255,255,.10); border-radius:16px; width:100%;"><tr>
           <td align="center" style="padding:22px 30px;">
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:16.5px; color:#AAB2C0; margin-bottom:5px;">Questions about the event?</div>
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:18px; font-weight:700; color:#F5F7FA;">Megan Belka</div>
@@ -154,9 +223,9 @@ isEnabledForEmailV3Rendering: true
       <!-- BRAND -->
       <tr><td align="center" bgcolor="#000000" style="background:#000000; padding:1px 36px 6px;">
         <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto 14px;"><tr>
-          <td valign="middle" style="padding-right:12px;"><a href="https://www.fmctraining.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_logo_footer_fmc" target="_blank"><img src="assets/fmc-logo-footer.png" width="58" height="30" alt="FMC" style="display:block; border:0; vertical-align:middle;"></a></td>
+          <td valign="middle" style="padding-right:12px;"><a href="https://www.fmctraining.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_logo_footer_fmc" target="_blank"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/fmc-logo-footer.png" width="58" height="30" alt="FMC" style="display:block; border:0; vertical-align:middle;"></a></td>
           <td valign="middle" style="padding-right:12px; font-family:'Source Sans 3',Arial,sans-serif; font-size:18px; color:#656c8a; line-height:1;">&times;</td>
-          <td valign="middle"><a href="https://www.adobe.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_logo_footer_adobe" target="_blank"><img src="assets/adobe-logo-footer.png" width="75" height="41" alt="Adobe" style="display:block; border:0; vertical-align:middle; margin-top:-3px;"></a></td>
+          <td valign="middle"><a href="https://www.adobe.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_logo_footer_adobe" target="_blank"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/adobe-logo-footer.png" width="75" height="41" alt="Adobe" style="display:block; border:0; vertical-align:middle; margin-top:-3px;"></a></td>
         </tr></table>
         <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:14px; font-weight:600; margin-bottom:22px;"><a href="https://postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=one_week_out_logo_footer_link" style="color:#22D3EE; text-decoration:none;">postinpremiere.com</a></div>
       </td></tr>
