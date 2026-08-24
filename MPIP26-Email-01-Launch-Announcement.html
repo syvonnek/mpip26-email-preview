@@ -41,18 +41,34 @@ isEnabledForEmailV3Rendering: true
     .logoname{ font-size:17px!important; }
     .dayTxt{ display:block!important; width:100%!important; padding-bottom:16px!important; }
     .dayGap{ display:none!important; }
-    .dayThumb{ display:block!important; width:100%!important; text-align:left!important; }
-    .dayThumb img{ width:220px!important; height:auto!important; }
+    .dayThumb{ display:block!important; width:100%!important; text-align:left!important; padding:0!important; }
+    .dayThumb img{ width:100%!important; max-width:100%!important; height:auto!important; }
+    .dayTime{ display:none!important; }
     .advH{ padding:32px 22px 34px!important; }
     .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
     .advSub{ font-size:16px!important; }
     .advPill{ margin-top:20px!important; }
-    .advPillTxt{ font-size:12.2px!important; letter-spacing:.06em!important; }
-    .advPillDate{ font-size:12.7px!important; letter-spacing:.02em!important; }
+    .advPillPad{ padding:7px 16px 7px 12px!important; }
+    .advPillIcon{ padding-right:9px!important; }
+    .advPillImg{ width:26px!important; height:26px!important; }
+    .advPillDot{ padding:0 8px!important; }
+    .advPillTxt{ font-size:12.3px!important; letter-spacing:.05em!important; }
+    .advPillDate{ font-size:12.8px!important; letter-spacing:.01em!important; }
     .priceDiv{ display:none!important; }
     .priceBr{ display:block!important; }
     .priceCell{ display:inline-block!important; padding:4px 0!important; }
     .groupQuoteBr{ display:inline!important; }
+  }
+  /* Narrow phones + HubSpot's mobile preview pane: drop the year so the pill stays on one line */
+  @media screen and (max-width:365px){
+    .advH{ padding:28px 18px 30px!important; }
+    .advPillYear{ display:none!important; }
+    .advPillPad{ padding:7px 13px 7px 9px!important; }
+    .advPillIcon{ padding-right:8px!important; }
+    .advPillImg{ width:24px!important; height:24px!important; }
+    .advPillDot{ padding:0 7px!important; }
+    .advPillTxt{ font-size:12px!important; letter-spacing:.04em!important; }
+    .advPillDate{ font-size:12.5px!important; letter-spacing:0!important; }
   }
 </style>
 </head>
@@ -85,12 +101,12 @@ isEnabledForEmailV3Rendering: true
         <div class="advEyebrow" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.20em; text-transform:uppercase; color:#5A5A5A; margin-bottom:20px;">FMC &times; Adobe Present</div>
         <h1 class="advHero" style="margin:0 0 20px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Color, reinvented. Editing, AI-accelerated. Both live with Adobe.</h1>
         <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">Two of the biggest changes in Premiere are arriving at once: Color Mode brings a new approach to grading, while AI tools help editors search, edit, and finish. See how both fit into real workflows and put them to use on your next project.</div>
-        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:8px 20px 8px 14px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td class="advPillPad" bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:8px 20px 8px 14px;">
           <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-            <td valign="middle" style="padding-right:11px;"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-app-icon.png" width="29" height="29" alt="" style="display:block; border-radius:6px; border:0;"></td>
+            <td valign="middle" class="advPillIcon" style="padding-right:11px;"><img class="advPillImg" src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-app-icon.png" width="29" height="29" alt="" style="display:block; border-radius:6px; border:0;"></td>
             <td valign="middle" class="advPillTxt" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#101010; white-space:nowrap;">Live Online Training</td>
-            <td valign="middle" style="padding:0 10px; color:#8B5CF6; font-size:14px; line-height:1;">&bull;</td>
-            <td valign="middle" class="advPillDate" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.04em; color:#0F8A9E; white-space:nowrap;">SEPT 29&ndash;30, 2026</td>
+            <td valign="middle" class="advPillDot" style="padding:0 10px; color:#8B5CF6; font-size:14px; line-height:1;">&bull;</td>
+            <td valign="middle" class="advPillDate" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.04em; color:#0F8A9E; white-space:nowrap;">SEPT 29&ndash;30<span class="advPillYear">, 2026</span></td>
           </tr></table>
         </td></tr></table>
       </td></tr>
@@ -133,7 +149,7 @@ isEnabledForEmailV3Rendering: true
           <tr><td bgcolor="#1B4A8F" style="background:#0F6E80; background:linear-gradient(100deg,#0F6E80,#1B4A8F); padding:16px 22px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td valign="middle" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:22px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#ffffff;">Day 1</td>
-              <td valign="middle" align="right" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15.7px; font-weight:600; color:rgba(255,255,255,.8); white-space:nowrap;">Sept 29 &middot; 9 AM&ndash;5:30 PM ET</td>
+              <td valign="middle" align="right" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15.7px; font-weight:600; color:rgba(255,255,255,.8); white-space:nowrap;">Sept 29<span class="dayTime"> &middot; 9 AM&ndash;5:30 PM ET</span></td>
             </tr></table>
           </td></tr>
           <tr><td style="padding:20px 22px;">
@@ -156,7 +172,7 @@ isEnabledForEmailV3Rendering: true
           <tr><td bgcolor="#7A3D8F" style="background:#5B3FA8; background:linear-gradient(100deg,#5B3FA8,#7A3D8F); padding:16px 22px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td valign="middle" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:22px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#ffffff;">Day 2</td>
-              <td valign="middle" align="right" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15.7px; font-weight:600; color:rgba(255,255,255,.8); white-space:nowrap;">Sept 30 &middot; 9 AM&ndash;5:30 PM ET</td>
+              <td valign="middle" align="right" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15.7px; font-weight:600; color:rgba(255,255,255,.8); white-space:nowrap;">Sept 30<span class="dayTime"> &middot; 9 AM&ndash;5:30 PM ET</span></td>
             </tr></table>
           </td></tr>
           <tr><td style="padding:20px 22px;">
