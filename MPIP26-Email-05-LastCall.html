@@ -47,28 +47,29 @@ isEnabledForEmailV3Rendering: true
     .advH{ padding:32px 22px 34px!important; }
     .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
     .advSub{ font-size:16px!important; }
+    .prLock{ margin-bottom:18px!important; }
+    .prLockIcon{ padding-right:11px!important; }
+    .prLockImg{ width:40px!important; height:40px!important; }
+    .prLockN{ font-size:18px!important; }
     .advPill{ margin-top:20px!important; }
-    .advPillPad{ padding:7px 16px 7px 12px!important; }
-    .advPillIcon{ padding-right:9px!important; }
-    .advPillImg{ width:26px!important; height:26px!important; }
+    .advPillPad{ padding:8px 16px!important; }
     .advPillDot{ padding:0 8px!important; }
-    .advPillTxt{ font-size:12.3px!important; letter-spacing:.05em!important; }
-    .advPillDate{ font-size:12.8px!important; letter-spacing:.01em!important; }
+    .advPillTxt{ font-size:13px!important; letter-spacing:.06em!important; }
+    .advPillDate{ font-size:13.5px!important; letter-spacing:.02em!important; }
     .priceDiv{ display:none!important; }
     .priceBr{ display:block!important; }
     .priceCell{ display:inline-block!important; padding:4px 0!important; }
     .groupQuoteBr{ display:inline!important; }
   }
-  /* Narrow phones + HubSpot's mobile preview pane: drop the year so the pill stays on one line */
+  /* Narrow phones + HubSpot's mobile preview pane */
   @media screen and (max-width:365px){
     .advH{ padding:28px 18px 30px!important; }
-    .advPillYear{ display:none!important; }
-    .advPillPad{ padding:7px 13px 7px 9px!important; }
-    .advPillIcon{ padding-right:8px!important; }
-    .advPillImg{ width:24px!important; height:24px!important; }
-    .advPillDot{ padding:0 7px!important; }
-    .advPillTxt{ font-size:12px!important; letter-spacing:.04em!important; }
-    .advPillDate{ font-size:12.5px!important; letter-spacing:0!important; }
+    .prLockImg{ width:36px!important; height:36px!important; }
+    .prLockN{ font-size:17px!important; }
+    .advPillPad{ padding:8px 13px!important; }
+    .advPillDot{ padding:0 6px!important; }
+    .advPillTxt{ font-size:11.4px!important; letter-spacing:.04em!important; }
+    .advPillDate{ font-size:11.8px!important; letter-spacing:0!important; }
   }
 </style>
 </head>
@@ -96,12 +97,17 @@ isEnabledForEmailV3Rendering: true
 
       <!-- ADOBE HEADER BLOCK: light ground, eyebrow, display headline, standfirst -->
       <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:44px 44px 46px;">
-        <div class="advEyebrow" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.20em; text-transform:uppercase; color:#5A5A5A; margin-bottom:20px;">Starts tomorrow</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" class="prLock" style="margin-bottom:22px;"><tr>
+          <td valign="middle" class="prLockIcon" style="padding-right:13px;"><img class="prLockImg" src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-icon-lockup.png" width="46" height="46" alt="Adobe Premiere" style="display:block; border-radius:10px; border:0;"></td>
+          <td valign="middle">
+            <div class="prLockK" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12px; font-weight:600; line-height:1.15; color:#6A6A72; letter-spacing:.01em;">Adobe</div>
+            <div class="prLockN" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:20px; font-weight:800; line-height:1.15; color:#101010; letter-spacing:-.02em;">Premiere</div>
+          </td>
+        </tr></table>
         <h1 class="advHero" style="margin:0 0 20px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Tomorrow, the edit changes color.</h1>
         <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">Modern Post in Premiere begins at 9 AM ET with Color Mode Foundations, and builds into two full days of modern post-production workflows.</div>
-        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td class="advPillPad" bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:8px 20px 8px 14px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td class="advPillPad" bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:9px 20px 9px 20px;">
           <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-            <td valign="middle" class="advPillIcon" style="padding-right:11px;"><img class="advPillImg" src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-app-icon.png" width="29" height="29" alt="" style="display:block; border-radius:6px; border:0;"></td>
             <td valign="middle" class="advPillTxt" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#101010; white-space:nowrap;">Live Online Training</td>
             <td valign="middle" class="advPillDot" style="padding:0 10px; color:#8B5CF6; font-size:14px; line-height:1;">&bull;</td>
             <td valign="middle" class="advPillDate" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.04em; color:#0F8A9E; white-space:nowrap;">SEPT 29&ndash;30<span class="advPillYear">, 2026</span></td>
@@ -117,6 +123,11 @@ isEnabledForEmailV3Rendering: true
       <!-- HERO VISUAL -->
       <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
         <img src="https://syvonnek.github.io/mpip26-email-preview/assets/hero-launch-620x320.jpg" width="620" height="320" alt="Modern Post in Premiere. Live online training, Sept 29-30, 2026." style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      </td></tr>
+
+      <!-- PRESENTED-BY CREDIT -->
+      <tr><td class="px" align="center" bgcolor="#000000" style="background:#000000; padding:28px 36px 0;">
+        <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:#7C8296;">FMC &times; Adobe Present</div>
       </td></tr>
 
       <!-- INTRO -->
