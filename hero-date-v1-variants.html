@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Lockup Variants</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06080f;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;line-height:1.5;padding-bottom:120px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  .intro{padding:56px 0 4px}
+  .intro h1{font-size:36px;font-weight:800;letter-spacing:-.03em}
+  .intro p{margin-top:12px;color:#AAB2C0;font-size:16px;max-width:700px;text-wrap:pretty}
+  .rule{height:4px;width:130px;border-radius:3px;margin-top:22px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+
+  .lab{font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+     margin:50px 0 6px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10)}
+  .note{color:#AAB2C0;font-size:14.5px;margin-bottom:16px;max-width:740px;text-wrap:pretty}
+  .note b{color:#E6EAF0}
+  .rec{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 10px;border-radius:100px;margin-bottom:10px;
+    background:rgba(91,225,160,.13);color:#5BE1A0;border:1px solid rgba(91,225,160,.34)}
+
+  .frame{border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden;background:#05070e}
+  .hero{position:relative;padding:56px 64px 52px;background:
+    radial-gradient(900px 460px at 82% 30%, rgba(139,92,246,.13), transparent 62%),
+    radial-gradient(760px 420px at 10% -10%, rgba(34,211,238,.10), transparent 60%), #05070e}
+  .kick{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#98A0B0}
+  .kick b{color:#fff}.kick i{font-style:normal;color:#5b6480;padding:0 8px}
+  h2.big{margin-top:18px;font-size:58px;font-weight:800;letter-spacing:-.033em;line-height:1.0;color:#F5F7FA}
+  .gsub{margin-top:10px;font-size:26px;font-weight:700;letter-spacing:-.02em;
+    background:linear-gradient(92deg,#5BD2FF,#7FA0FF 42%,#B98BFF 75%,#E48FD9);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .ssub{margin-top:10px;font-size:26px;font-weight:700;letter-spacing:-.02em;color:#C8CDDB}
+  .ctas{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .btn{padding:13px 34px;border-radius:100px;font-size:15.5px;font-weight:700;color:#fff;
+    background:linear-gradient(100deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .btn-o{padding:13px 30px;border-radius:100px;font-size:15.5px;font-weight:500;color:#D3D7E6;
+    border:1px solid rgba(255,255,255,.30)}
+
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#FF5F8F;
+    box-shadow:0 0 0 4px rgba(255,95,143,.18);animation:pulse 2s infinite;vertical-align:middle}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(255,95,143,.18)}50%{box-shadow:0 0 0 8px rgba(255,95,143,.07)}}
+
+  /* A: solid white date */
+  .lkA{margin-top:24px}
+  .lkA .l1{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:800;
+    letter-spacing:.24em;text-transform:uppercase;color:#fff}
+  .lkA .l2{margin-top:7px;font-size:30px;font-weight:800;letter-spacing:-.015em;line-height:1;color:#fff}
+
+  /* B: gradient date, solid subtitle */
+  .lkB{margin-top:24px}
+  .lkB .l1{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:800;
+    letter-spacing:.24em;text-transform:uppercase;color:#fff}
+  .lkB .l2{margin-top:7px;font-size:32px;font-weight:900;letter-spacing:-.015em;line-height:1;
+    background:linear-gradient(92deg,#22D3EE,#4F7CFF 45%,#8B5CF6 80%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* C: one-line lockup */
+  .lkC{margin-top:22px;display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+  .lkC .fmt{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:800;
+    letter-spacing:.2em;text-transform:uppercase;color:#fff}
+  .lkC .sep{width:1px;height:18px;background:rgba(255,255,255,.25)}
+  .lkC .dt{font-size:19px;font-weight:800;letter-spacing:.02em;color:#22D3EE;text-transform:uppercase}
+
+  /* D: date + inline time */
+  .lkD{margin-top:24px}
+  .lkD .l1{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:800;
+    letter-spacing:.24em;text-transform:uppercase;color:#fff}
+  .lkD .l2{margin-top:7px;font-size:27px;font-weight:800;letter-spacing:-.012em;line-height:1.15;color:#fff}
+  .lkD .l2 span{font-size:15px;font-weight:600;color:#8b93a8;letter-spacing:.01em;margin-left:12px}
+
+  .foot{margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);
+    color:#8b90a5;font-size:14.5px;text-wrap:pretty;max-width:760px}
+  .foot b{color:#E6EAF0}
+  @media (max-width:760px){.hero{padding:38px 26px 36px}h2.big{font-size:38px}.gsub,.ssub{font-size:19px}
+    .lkA .l2{font-size:24px}.lkB .l2{font-size:25px}.lkD .l2{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="intro">
+  <h1>Date lockup — four takes</h1>
+  <p>Same Option 1 skeleton, smaller date throughout, and the gradient conflict resolved a different way in each. International strip unchanged from the last study, omitted here to keep the eye on the lockup. On the time question: my take is <b>drop it from the hero</b> — it is a detail, it is already in the program section, and Zoom converts it anyway. Variant D shows the keep-it version so you can compare.</p>
+  <div class="rule"></div>
+</div>
+
+<div class="lab">A — Solid white date, gradient subtitle stays</div>
+<p class="note">The date drops to 30px solid white. The subtitle keeps the spectrum gradient as the hero's only gradient text, so nothing competes: gradient = what it is, white = when. No time.</p>
+<span class="rec">Recommended</span>
+<div class="frame"><div class="hero">
+  <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+  <h2 class="big">Modern Post<br>in Premiere</h2>
+  <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+  <div class="lkA">
+    <div class="l1"><span class="dot"></span> Live Online Training</div>
+    <div class="l2">September 29&ndash;30, 2026</div>
+  </div>
+  <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+</div></div>
+
+<div class="lab">B — Gradient date, subtitle goes solid</div>
+<p class="note">The other way around: the subtitle becomes calm light grey and the date takes the gradient at 32px. The date is now the loudest colored thing in the hero. Costs you the spectrum subtitle, which is a Color Mode signature.</p>
+<div class="frame"><div class="hero">
+  <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+  <h2 class="big">Modern Post<br>in Premiere</h2>
+  <div class="ssub">Color Mode + AI-Assisted Post-Production</div>
+  <div class="lkB">
+    <div class="l1"><span class="dot"></span> Live Online Training</div>
+    <div class="l2">September 29&ndash;30, 2026</div>
+  </div>
+  <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+</div></div>
+
+<div class="lab">C — One-line lockup, cyan date</div>
+<p class="note">Most compact: live dot, LIVE ONLINE TRAINING, a hairline divider, and the date in cyan caps at 19px. Reads as a single strong label rather than a second headline. Quietest of the four — the date is clear but no longer display type.</p>
+<div class="frame"><div class="hero">
+  <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+  <h2 class="big">Modern Post<br>in Premiere</h2>
+  <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+  <div class="lkC">
+    <div class="fmt"><span class="dot"></span> Live Online Training</div>
+    <div class="sep"></div>
+    <div class="dt">Sept 29&ndash;30, 2026</div>
+  </div>
+  <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+</div></div>
+
+<div class="lab">D — Same as A, with the time kept inline</div>
+<p class="note">If the time must stay: it rides on the same line as the date, small and muted, instead of getting its own row. Date drops slightly to 27px to make room. This is the version to pick only if losing the time entirely feels wrong.</p>
+<div class="frame"><div class="hero">
+  <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+  <h2 class="big">Modern Post<br>in Premiere</h2>
+  <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+  <div class="lkD">
+    <div class="l1"><span class="dot"></span> Live Online Training</div>
+    <div class="l2">September 29&ndash;30, 2026<span>9 AM&ndash;5:30 PM ET</span></div>
+  </div>
+  <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+</div></div>
+
+<div class="foot">
+  <b>Where the time goes if it leaves the hero:</b> it already lives in the program section and the pricing card, and the Zoom page converts it per viewer anyway. If Adobe wants it visible above the fold, variant D is the compromise. <b>Nothing applied</b> — mocks only.
+</div>
+
+</div>
+</body>
+</html>
