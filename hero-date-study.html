@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Date Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06080f;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;line-height:1.5;padding-bottom:120px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  .intro{padding:56px 0 4px}
+  .intro h1{font-size:36px;font-weight:800;letter-spacing:-.03em}
+  .intro p{margin-top:12px;color:#AAB2C0;font-size:16px;max-width:700px;text-wrap:pretty}
+  .rule{height:4px;width:130px;border-radius:3px;margin-top:22px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+
+  .lab{font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+     margin:52px 0 6px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10)}
+  .note{color:#AAB2C0;font-size:14.5px;margin-bottom:16px;max-width:740px;text-wrap:pretty}
+  .note b{color:#E6EAF0}
+  .rec{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 10px;border-radius:100px;margin-bottom:10px;
+    background:rgba(91,225,160,.13);color:#5BE1A0;border:1px solid rgba(91,225,160,.34)}
+
+  /* ---------- shared hero frame ---------- */
+  .frame{border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden;background:#05070e}
+  .hero{position:relative;padding:64px 64px 0;background:
+    radial-gradient(900px 460px at 82% 30%, rgba(139,92,246,.13), transparent 62%),
+    radial-gradient(760px 420px at 10% -10%, rgba(34,211,238,.10), transparent 60%), #05070e}
+  .kick{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#98A0B0}
+  .kick b{color:#fff}.kick i{font-style:normal;color:#5b6480;padding:0 8px}
+  h2.big{margin-top:18px;font-size:62px;font-weight:800;letter-spacing:-.033em;line-height:1.0;color:#F5F7FA}
+  .gsub{margin-top:10px;font-size:27px;font-weight:700;letter-spacing:-.02em;
+    background:linear-gradient(92deg,#5BD2FF,#7FA0FF 42%,#B98BFF 75%,#E48FD9);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .body{margin-top:14px;font-size:16.5px;font-weight:350;color:#C8CDDB;max-width:480px;text-wrap:pretty}
+  .ctas{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .btn{padding:13px 34px;border-radius:100px;font-size:15.5px;font-weight:700;color:#fff;
+    background:linear-gradient(100deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .btn-o{padding:13px 30px;border-radius:100px;font-size:15.5px;font-weight:500;color:#D3D7E6;
+    border:1px solid rgba(255,255,255,.30)}
+
+  /* international strip (Option A rail) */
+  .strip{display:flex;flex-wrap:wrap;margin-top:44px;
+    border-top:1px solid rgba(255,255,255,.11);
+    background:linear-gradient(90deg,rgba(34,211,238,.08),rgba(139,92,246,.05) 55%,transparent)}
+  .strip .cell{flex:1;min-width:200px;padding:16px 20px;display:flex;align-items:center;gap:11px;
+    border-right:1px solid rgba(255,255,255,.08)}
+  .strip .cell:last-child{border-right:0}
+  .strip svg{flex:0 0 auto;width:20px;height:20px}
+  .strip .t{font-size:13.2px;font-weight:700;color:#F5F7FA;line-height:1.3;letter-spacing:-.005em}
+  .strip .t span{display:block;font-weight:350;font-size:12px;color:#98A0B0}
+
+  /* ---------- OPTION 1 : date lockup in the headline stack ---------- */
+  .lockup{margin-top:26px}
+  .lockup .l1{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:800;
+    letter-spacing:.24em;text-transform:uppercase;color:#fff}
+  .dot{width:9px;height:9px;border-radius:50%;background:#FF5F8F;
+    box-shadow:0 0 0 4px rgba(255,95,143,.18);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(255,95,143,.18)}50%{box-shadow:0 0 0 8px rgba(255,95,143,.07)}}
+  .lockup .l2{margin-top:8px;font-size:44px;font-weight:900;letter-spacing:-.02em;line-height:1;
+    background:linear-gradient(92deg,#22D3EE,#4F7CFF 45%,#8B5CF6 80%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lockup .l3{margin-top:6px;font-size:15px;font-weight:600;color:#98A0B0;letter-spacing:.04em}
+
+  /* ---------- OPTION 2 : ticket panel beside the copy ---------- */
+  .cols{display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap}
+  .cols .left{flex:1;min-width:320px}
+  .ticket{flex:0 0 auto;width:300px;border-radius:18px;overflow:hidden;margin-top:8px;
+    background:#0a0e18;border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 22px 60px rgba(0,0,0,.55)}
+  .ticket .tk-top{height:6px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .ticket .tk-live{display:flex;align-items:center;gap:9px;padding:15px 22px 0;
+    font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff}
+  .ticket .tk-date{padding:10px 22px 0;font-size:44px;font-weight:900;letter-spacing:-.025em;line-height:1;color:#fff}
+  .ticket .tk-date span{display:block;font-size:19px;font-weight:700;color:#22D3EE;margin-top:5px;letter-spacing:0}
+  .ticket .tk-meta{padding:13px 22px 19px;font-size:13.5px;font-weight:600;color:#98A0B0;
+    border-bottom:1px dashed rgba(255,255,255,.16)}
+  .ticket .tk-cta{display:block;text-align:center;padding:14px;font-size:14.5px;font-weight:700;color:#fff}
+
+  /* ---------- OPTION 3 : full-width spectrum band ---------- */
+  .band{margin-top:30px;border-radius:14px;padding:2px;
+    background:linear-gradient(92deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .band .in{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    background:#080b14;border-radius:12px;padding:18px 28px}
+  .band .fmt{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;color:#fff}
+  .band .dt{font-size:30px;font-weight:900;letter-spacing:-.015em;color:#fff;white-space:nowrap}
+  .band .dt span{font-size:16px;font-weight:600;color:#8FE3F5;margin-left:12px;letter-spacing:.02em}
+
+  .foot{margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);
+    color:#8b90a5;font-size:14.5px;text-wrap:pretty;max-width:760px}
+  .foot b{color:#E6EAF0}
+  @media (max-width:760px){
+    .hero{padding:40px 26px 0}
+    h2.big{font-size:40px}.gsub{font-size:20px}
+    .lockup .l2{font-size:30px}
+    .band .dt{font-size:22px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="intro">
+  <h1>Making the date scream</h1>
+  <p>Three hero options. All three: pill deleted, <b>FMC × Adobe Present</b> moves to the top as the kicker, and the bottom rail becomes the international strip (Option A) with 20px icons — the date no longer lives down there, so nothing repeats. Backgrounds shown flat; the hero photo stays as-is.</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ============ OPTION 1 ============ -->
+<div class="lab">Option 1 — Date lockup in the headline stack</div>
+<p class="note"><b>Live Online Training</b> becomes a bold line with a pulsing live dot, and the date is set at 44px gradient type directly beneath the subtitle. The date reads as part of the headline, impossible to miss, and the layout stays single-column like today.</p>
+<span class="rec">Recommended</span>
+<div class="frame">
+  <div class="hero">
+    <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+    <h2 class="big">Modern Post<br>in Premiere</h2>
+    <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="lockup">
+      <div class="l1"><span class="dot"></span> Live Online Training</div>
+      <div class="l2">September 29&ndash;30, 2026</div>
+      <div class="l3">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; On Zoom, worldwide</div>
+    </div>
+    <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+    <div class="strip">
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 4.4 6.3 4.4 9s-1.4 5.8-4.4 9c-3-3.2-4.4-6.3-4.4-9S9 6.2 12 3z"/></svg>
+        <div class="t">Join live from anywhere<span>Live on Zoom worldwide</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6FA8FF" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Real-time captions<span>Built into every session</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Dubbed in 7 languages<span>On request</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day replay<span>Watch in your own time zone</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPTION 2 ============ -->
+<div class="lab">Option 2 — Ticket panel beside the copy</div>
+<p class="note">The date becomes an object: a ticket-style card at the right of the hero with the spectrum edge, huge date, and its own Register. Strongest "this is an event you attend" signal and it gives desktop a second focal point. On mobile the ticket stacks under the CTAs.</p>
+<div class="frame">
+  <div class="hero">
+    <div class="cols">
+      <div class="left">
+        <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+        <h2 class="big">Modern Post<br>in Premiere</h2>
+        <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+        <div class="body">Get the most from Premiere with practical training straight from the Adobe team and Community Experts.</div>
+        <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+      </div>
+      <div class="ticket">
+        <div class="tk-top"></div>
+        <div class="tk-live"><span class="dot"></span> Live Online Training</div>
+        <div class="tk-date">Sept 29&ndash;30<span>2026</span></div>
+        <div class="tk-meta">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; On Zoom</div>
+        <span class="tk-cta" style="background:linear-gradient(100deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)">Get Tickets &rarr;</span>
+      </div>
+    </div>
+    <div class="strip">
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 4.4 6.3 4.4 9s-1.4 5.8-4.4 9c-3-3.2-4.4-6.3-4.4-9S9 6.2 12 3z"/></svg>
+        <div class="t">Join live from anywhere<span>Live on Zoom worldwide</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6FA8FF" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Real-time captions<span>Built into every session</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Dubbed in 7 languages<span>On request</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day replay<span>Watch in your own time zone</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPTION 3 ============ -->
+<div class="lab">Option 3 — Spectrum band between subtitle and CTAs</div>
+<p class="note">A full-width spectrum-bordered band carrying only two things: <b>LIVE ONLINE TRAINING</b> and the date at 30px. Loudest of the three and hardest to scroll past, but it interrupts the headline-to-button flow more than the others.</p>
+<div class="frame">
+  <div class="hero">
+    <div class="kick"><b>FMC</b><i>&times;</i><b>Adobe</b>&nbsp;&nbsp;Present</div>
+    <h2 class="big">Modern Post<br>in Premiere</h2>
+    <div class="gsub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="band">
+      <div class="in">
+        <div class="fmt"><span class="dot"></span> Live Online Training</div>
+        <div class="dt">Sept 29&ndash;30, 2026<span>9 AM&ndash;5:30 PM ET</span></div>
+      </div>
+    </div>
+    <div class="ctas"><span class="btn">Register &rarr;</span><span class="btn-o">View Program</span></div>
+    <div class="strip">
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 4.4 6.3 4.4 9s-1.4 5.8-4.4 9c-3-3.2-4.4-6.3-4.4-9S9 6.2 12 3z"/></svg>
+        <div class="t">Join live from anywhere<span>Live on Zoom worldwide</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6FA8FF" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Real-time captions<span>Built into every session</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Dubbed in 7 languages<span>On request</span></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day replay<span>Watch in your own time zone</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <b>What happened to the old bottom rail:</b> its date cell moved up into the hero, and its Zoom + 180-day cells were absorbed into the international strip — so nothing is duplicated and the strip earns its slot. The <b>Pr</b> icon from the deleted pill can sit next to the kicker if Adobe wants it kept. <b>Nothing applied</b> — mocks only.
+</div>
+
+</div>
+</body>
+</html>
