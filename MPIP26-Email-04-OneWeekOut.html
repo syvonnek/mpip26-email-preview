@@ -47,6 +47,10 @@ isEnabledForEmailV3Rendering: true
     .advH{ padding:32px 22px 34px!important; }
     .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
     .advSub{ font-size:16px!important; }
+    .platePad{ padding:32px 22px 30px!important; }
+    .plateName{ font-size:31px!important; letter-spacing:-.026em!important; }
+    .plateBand{ font-size:11.5px!important; letter-spacing:.08em!important; }
+    .plateRule{ width:92px!important; }
     .prLock{ margin-bottom:18px!important; }
     .prLockIcon{ padding-right:11px!important; }
     .prLockImg{ width:40px!important; height:40px!important; }
@@ -95,24 +99,25 @@ isEnabledForEmailV3Rendering: true
         </tr></table>
       </td></tr>
 
-      <!-- ADOBE HEADER BLOCK: light ground, eyebrow, display headline, standfirst -->
-      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:44px 36px 16px">
-        <table role="presentation" cellpadding="0" cellspacing="0" class="prLock" style="margin-bottom:22px;"><tr>
-          <td valign="middle" class="prLockIcon" style="padding-right:14px;"><img class="prLockImg" src="https://syvonnek.github.io/mpip26-email-preview/assets/pr-icon-lockup.png" width="46" height="46" alt="Adobe Premiere" style="display:block; border-radius:10px; border:0;"></td>
-          <td valign="middle">
-            <div class="prLockK" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11.5px; font-weight:700; line-height:1; letter-spacing:.19em; text-transform:uppercase; color:#7A7A84; margin-top:2px;">FMC &times; Adobe Present</div>
-            <div class="prLockN" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:21px; font-weight:800; line-height:1.2; color:#101010; letter-spacing:-.021em; margin-top:5px;">Modern Post in Premiere</div>
+      <!-- EVENT PLATE: background imagery + event identity -->
+      <tr><td class="plateCell" background="https://syvonnek.github.io/mpip26-email-preview/assets/plate-oneweek-620x290.jpg" bgcolor="#080b12" valign="middle" style="background-color:#080b12; background-image:url('https://syvonnek.github.io/mpip26-email-preview/assets/plate-oneweek-620x290.jpg'); background-position:center center; background-size:cover; background-repeat:no-repeat; padding:0;">
+        <!--[if gte mso 9]>
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" fill="true" stroke="false" style="width:620px; height:290px;">
+          <v:fill type="frame" src="https://syvonnek.github.io/mpip26-email-preview/assets/plate-oneweek-620x290.jpg" color="#080b12" />
+          <v:textbox inset="0,0,0,0">
+        <![endif]-->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="platePad" style="padding:40px 36px 36px;">
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11.5px; font-weight:700; line-height:1; letter-spacing:.2em; text-transform:uppercase; color:#8b90a5; margin-bottom:16px;">FMC &times; Adobe Present</div>
+            <div class="plateName" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:44px; font-weight:800; line-height:1.04; letter-spacing:-.03em; color:#FFFFFF;">Modern Post<br>in Premiere</div>
+            <div class="plateRule" style="width:120px; height:4px; line-height:4px; font-size:0; border-radius:3px; margin-top:20px; background:#22D3EE; background:linear-gradient(90deg,#22D3EE 0%,#4F7CFF 40%,#8B5CF6 72%,#E34FCB 100%);">&nbsp;</div>
+            <div class="plateBand" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; line-height:1.5; letter-spacing:.1em; text-transform:uppercase; color:#E6EAF0; margin-top:22px;">Live Online Training <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> 2 Days <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> <span style="color:#8FE3F5;">Sept 29&ndash;30, 2026</span></div>
           </td>
         </tr></table>
-        <h1 class="advHero" style="margin:0 0 20px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Your calendar only needs two days. Your access lasts 180.</h1>
-        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">Join the sessions live, or build the two days around your own schedule.</div>
-        <table role="presentation" cellpadding="0" cellspacing="0" class="advPill" style="margin-top:24px;"><tr><td class="advPillPad" bgcolor="#FFFFFF" style="background:#FFFFFF; border:1.5px solid #22D3EE; border-radius:100px; padding:9px 20px 9px 20px;">
-          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-            <td valign="middle" class="advPillTxt" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#101010; white-space:nowrap;">Live Online Training</td>
-            <td valign="middle" class="advPillDot" style="padding:0 10px; color:#8B5CF6; font-size:14px; line-height:1;">&bull;</td>
-            <td valign="middle" class="advPillDate" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; font-weight:700; letter-spacing:.04em; color:#0F8A9E; white-space:nowrap;">SEPT 29&ndash;30<span class="advPillYear">, 2026</span></td>
-          </tr></table>
-        </td></tr></table>
+        <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
       </td></tr>
 
       <!-- ADOBE SPECTRUM BAR -->
@@ -120,9 +125,10 @@ isEnabledForEmailV3Rendering: true
         <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
       </td></tr>
 
-      <!-- HERO VISUAL -->
-      <tr><td bgcolor="#030611" align="center" style="background:#030611; font-size:0; line-height:0; border-bottom:1px solid rgba(255,255,255,0.09);">
-        <img src="https://syvonnek.github.io/mpip26-email-preview/assets/hero-oneweek-620x264.jpg" width="620" height="264" alt="Modern Post in Premiere. One week to go. Two live days, 180 days of access." style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      <!-- EMAIL HEADLINE -->
+      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:36px 36px 34px">
+        <h1 class="advHero" style="margin:0 0 16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Your calendar only needs two days. Your access lasts 180.</h1>
+        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">Join the sessions live, or build the two days around your own schedule.</div>
       </td></tr>
 
       <!-- INTRO -->
