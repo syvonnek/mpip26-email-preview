@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access block — strip vs 2&times;2</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06080f;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;
+       line-height:1.5;padding-bottom:110px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .intro{padding:54px 0 4px}
+  .intro h1{font-size:34px;font-weight:800;letter-spacing:-.03em}
+  .intro p{margin-top:12px;color:#AAB2C0;font-size:16px;max-width:64ch;text-wrap:pretty}
+  .rule{height:4px;width:120px;border-radius:3px;margin-top:22px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .lab{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+    margin:48px 0 6px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10)}
+  .note{color:#AAB2C0;font-size:14.5px;margin-bottom:18px;max-width:66ch;text-wrap:pretty}
+  .note b{color:#E6EAF0}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 10px;border-radius:100px;margin-bottom:12px;
+    background:rgba(91,225,160,.13);color:#5BE1A0;border:1px solid rgba(91,225,160,.34)}
+  .shell{max-width:620px;background:#000;border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;overflow:hidden}
+
+  /* shared plate above, so context matches the real email */
+  .plate{padding:26px 30px 24px;background:
+    radial-gradient(620px 320px at 6% -20%, rgba(34,211,238,.22), transparent 62%),#080b12;
+    display:flex;align-items:center;gap:18px}
+  .plate .k{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5}
+  .plate .n{margin-top:9px;font-size:31px;font-weight:800;line-height:1.05;letter-spacing:-.028em;color:#fff}
+  .plate .r{width:96px;height:4px;border-radius:3px;margin-top:13px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .plate .b{margin-top:14px;font-size:11.6px;font-weight:700;letter-spacing:.09em;
+    text-transform:uppercase;color:#E6EAF0}
+  .plate .b s{color:#8FE3F5;text-decoration:none}
+  .plate .b i{color:#5b6480;font-style:normal}
+  .plate .ui{flex:0 0 auto;width:164px;height:123px;border-radius:8px;border:1px solid rgba(255,255,255,.16);
+    background:linear-gradient(140deg,#1b2333,#0d121c);display:flex;align-items:center;justify-content:center;
+    font-size:10px;color:#5b6480;letter-spacing:.1em;text-transform:uppercase}
+  .bar{height:7px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+
+  /* ---- A: current strip ---- */
+  .strip{padding:20px 30px 22px;background:#070a12;
+    background-image:linear-gradient(90deg, rgba(34,211,238,.10) 0%, rgba(139,92,246,.07) 52%, rgba(227,79,203,.05) 100%);
+    border-top:1px solid rgba(34,211,238,.28);border-bottom:1px solid rgba(255,255,255,.09)}
+  .strip .kk{font-size:10.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#22D3EE;margin-bottom:15px}
+  .s3{display:flex;gap:22px}
+  .s3 .c{flex:1}
+  .s3 svg{width:30px;height:30px;display:block;margin-bottom:8px}
+  .s3 .t{font-size:12.8px;font-weight:700;color:#F5F7FA;line-height:1.3}
+  .s3 .t span{display:block;font-weight:350;font-size:11.6px;color:#9AA2B4;margin-top:3px;line-height:1.4}
+
+  /* ---- B: 2x2 section ---- */
+  .sec2{padding:30px 30px 32px;background:#070a12;
+    background-image:radial-gradient(560px 300px at 12% 0%, rgba(34,211,238,.13), transparent 66%),
+                     radial-gradient(500px 280px at 96% 108%, rgba(227,79,203,.10), transparent 62%);
+    border-top:1px solid rgba(34,211,238,.28);border-bottom:1px solid rgba(255,255,255,.09)}
+  .sec2 .kk{font-size:10.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#22D3EE;margin-bottom:7px}
+  .sec2 h3{font-size:23px;font-weight:800;letter-spacing:-.022em;color:#fff;margin-bottom:19px}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .g2 .c{padding:16px 17px;border-radius:11px;background:#0b1019;border:1px solid rgba(255,255,255,.11)}
+  .g2 svg{width:30px;height:30px;display:block;margin-bottom:10px}
+  .g2 .t{font-size:14.6px;font-weight:700;color:#F5F7FA;line-height:1.28;letter-spacing:-.008em}
+  .g2 .t span{display:block;font-weight:350;font-size:12.5px;color:#9AA2B4;margin-top:4px;line-height:1.45}
+  .langs{margin-top:11px;padding:15px 17px;border-radius:11px;background:#0b1019;border:1px solid rgba(255,255,255,.11)}
+  .langs .lt{font-size:13.6px;font-weight:700;color:#F5F7FA;margin-bottom:9px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:12px;font-weight:600;color:#CDD5E1;padding:5px 11px;border-radius:100px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14)}
+
+  .foot{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);
+    color:#8b90a5;font-size:14.5px;max-width:66ch;text-wrap:pretty}
+  .foot b{color:#E6EAF0}
+  @media (max-width:620px){ .plate{flex-direction:column;align-items:flex-start} .plate .ui{width:100%;height:104px}
+    .s3{flex-direction:column;gap:16px} .g2{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="intro">
+  <h1>Access block: strip or section</h1>
+  <p>Same content, same gradient family, two weights. Plate above included so you can judge them in context. Icons shown at 30px in both.</p>
+  <div class="rule"></div>
+</div>
+
+<!-- A -->
+<div class="lab">A &mdash; The strip (what is live now)</div>
+<p class="note">Reads as a <b>qualifier on the event branding</b> directly above it: here is what is included. Quick to pass, keeps the reader moving toward the program.</p>
+<div class="shell">
+  <div class="plate">
+    <div>
+      <div class="k">FMC &times; Adobe Present</div>
+      <div class="n">Modern Post<br>in Premiere</div>
+      <div class="r"></div>
+      <div class="b">Live Online Training <i>&nbsp;&bull;&nbsp;</i> <s>Sept 29&ndash;30, 2026</s></div>
+    </div>
+    <div class="ui">Premiere UI</div>
+  </div>
+  <div class="bar"></div>
+  <div class="strip">
+    <div class="kk">Created for editors everywhere</div>
+    <div class="s3">
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Real-time captions<span>Live, from anywhere</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Dubbed on request<span>English &middot; Spanish &middot; French &middot; German<br>Japanese &middot; Portuguese &middot; Italian</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day replay<span>Watch anytime, on your schedule</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B -->
+<div class="lab">B &mdash; The 2&times;2 section</div>
+<p class="note">Reads as <b>its own chapter</b>: a heading, four bordered cards, and the languages given a card of their own. Adds <b>Live on Zoom</b> as a fourth benefit. Stops the reader, which is right when global access <i>is</i> the argument and wrong when it is only reassurance.</p>
+<span class="tag">Use in In-Cart 2</span>
+<div class="shell">
+  <div class="plate">
+    <div>
+      <div class="k">FMC &times; Adobe Present</div>
+      <div class="n">Modern Post<br>in Premiere</div>
+      <div class="r"></div>
+      <div class="b">Live Online Training <i>&nbsp;&bull;&nbsp;</i> <s>Sept 29&ndash;30, 2026</s></div>
+    </div>
+    <div class="ui">Premiere UI</div>
+  </div>
+  <div class="bar"></div>
+  <div class="sec2">
+    <div class="kk">Created for editors everywhere</div>
+    <h3>Join from anywhere. Keep it for 180 days.</h3>
+    <div class="g2">
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="13" height="12" rx="3.5"/><path d="M18.4 8.2l3.6-2.1v11.8l-3.6-2.1z"/></svg>
+        <div class="t">Live on Zoom<span>Interactive sessions, wherever you work.</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6FA8FF" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Real-time captions<span>Built into every live session.</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Dubbed on request<span>Professionally dubbed recordings.</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day replay<span>Watch anytime, on your schedule.</span></div>
+      </div>
+    </div>
+    <div class="langs">
+      <div class="lt">Language access</div>
+      <div class="chips">
+        <span class="chip">English</span><span class="chip">Spanish</span><span class="chip">French</span>
+        <span class="chip">German</span><span class="chip">Japanese</span><span class="chip">Portuguese</span>
+        <span class="chip">Italian</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <b>My recommendation:</b> keep A everywhere by default, and promote to B only in <b>In-Cart 2</b>, where &ldquo;you cannot attend live and that is fine&rdquo; is the entire argument. One Week Out is the other candidate. In the deep dives, B would push the program a full screen further down for information the reader has not asked for yet. <b>Nothing applied</b> &mdash; mock only.
+</div>
+
+</div>
+</body>
+</html>
