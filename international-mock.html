@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Emphasis — Mock</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06080f;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;line-height:1.55;padding-bottom:120px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  header{padding:60px 0 8px}
+  h1{font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1.06}
+  .lede{margin-top:13px;color:#AAB2C0;font-size:16.5px;max-width:680px;text-wrap:pretty}
+  .rule{height:4px;width:130px;border-radius:3px;margin-top:24px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .quote{margin:30px 0 0;padding:18px 22px;border-radius:13px;
+    background:linear-gradient(120deg,rgba(34,211,238,.09),rgba(139,92,246,.06));
+    border:1px solid rgba(34,211,238,.26);color:#DCE2EC;font-size:15.5px;text-wrap:pretty}
+  .quote b{color:#8FE3F5;font-weight:700}
+
+  h2{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+     margin:56px 0 8px;padding-top:26px;border-top:1px solid rgba(255,255,255,.10)}
+  .note{color:#AAB2C0;font-size:15px;margin-bottom:20px;max-width:700px;text-wrap:pretty}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 10px;border-radius:100px;margin-bottom:12px;
+    background:rgba(91,225,160,.13);color:#5BE1A0;border:1px solid rgba(91,225,160,.34)}
+  .tag.alt{background:rgba(240,196,107,.13);color:#F0C46B;border-color:rgba(240,196,107,.32)}
+
+  .stage{background:#030611;border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden;margin-bottom:14px}
+  .fakehero{padding:44px 40px 40px;background:
+    radial-gradient(760px 380px at 8% -20%, rgba(34,211,238,.16), transparent 62%),
+    radial-gradient(600px 340px at 96% 110%, rgba(139,92,246,.14), transparent 60%), #030611}
+  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5}
+  .fakehero h3{margin-top:14px;font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#fff}
+  .fakehero .sub{margin-top:12px;color:#AAB2C0;font-size:17px;max-width:470px}
+  .ghost{margin-top:22px;display:inline-block;padding:11px 24px;border-radius:100px;font-size:13.5px;font-weight:700;
+    color:#fff;background:linear-gradient(100deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+
+  /* ---- SITE OPTION A : slim strip ---- */
+  .stripA{display:flex;flex-wrap:wrap;align-items:center;gap:0;
+    border-top:1px solid rgba(255,255,255,.11);border-bottom:1px solid rgba(255,255,255,.11);
+    background:linear-gradient(90deg,rgba(34,211,238,.09),rgba(139,92,246,.05) 55%,transparent)}
+  .stripA .cell{flex:1;min-width:200px;padding:17px 22px;display:flex;align-items:center;gap:11px;
+    border-right:1px solid rgba(255,255,255,.08)}
+  .stripA .cell:last-child{border-right:0}
+  .stripA svg{flex:0 0 auto;width:21px;height:21px}
+  .stripA .t{font-size:13.6px;font-weight:700;color:#F5F7FA;letter-spacing:-.005em;line-height:1.3}
+  .stripA .t span{display:block;font-weight:350;font-size:12.4px;color:#98A0B0;letter-spacing:0}
+
+  /* ---- SITE OPTION B : band with languages ---- */
+  .bandB{padding:30px 40px 32px;border-top:1px solid rgba(255,255,255,.11);
+    background:radial-gradient(700px 300px at 12% 0%, rgba(34,211,238,.11), transparent 64%), #05070e}
+  .bandB .hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .bandB .hd b{font-size:22px;font-weight:800;letter-spacing:-.022em;color:#fff}
+  .bandB .hd i{font-style:normal;font-size:13px;color:#98A0B0}
+  .b3{display:flex;flex-wrap:wrap;gap:12px}
+  .b3 .c{flex:1;min-width:210px;padding:16px 18px;border-radius:12px;background:#0a0e18;
+    border:1px solid rgba(255,255,255,.10);display:flex;gap:12px;align-items:flex-start}
+  .b3 svg{flex:0 0 auto;width:22px;height:22px;margin-top:1px}
+  .b3 .t{font-size:14.4px;font-weight:700;color:#F5F7FA;line-height:1.3}
+  .b3 .t span{display:block;font-weight:350;font-size:12.8px;color:#98A0B0;margin-top:3px;line-height:1.45}
+  .langs{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .langs .k{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#22D3EE;margin-right:4px}
+  .chip{font-size:12.4px;font-weight:600;color:#CDD5E1;padding:5px 12px;border-radius:100px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13)}
+
+  /* ---- EMAIL ROW ---- */
+  .mailshell{max-width:620px;margin:0 auto;background:#000;border:1px solid rgba(255,255,255,.16);
+    border-radius:16px;overflow:hidden}
+  .mailplate{padding:34px 32px 30px;background:
+    radial-gradient(600px 320px at 6% -18%, rgba(34,211,238,.20), transparent 62%),#080b12}
+  .mailplate .n{font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1.04;color:#fff;margin-top:12px}
+  .mailplate .r{width:100px;height:4px;border-radius:3px;margin-top:16px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .mailplate .b{margin-top:17px;font-size:12.4px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E6EAF0}
+  .mailplate .b i{color:#5b6480;font-style:normal}
+  .mailbar{height:8px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .globalrow{padding:20px 26px;background:#05070e;border-bottom:1px solid rgba(255,255,255,.09)}
+  .globalrow .k{font-size:10.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#22D3EE;
+    text-align:center;margin-bottom:14px}
+  .g3{display:flex;gap:10px}
+  .g3 .c{flex:1;text-align:center;padding:0 6px}
+  .g3 svg{width:24px;height:24px;margin:0 auto 8px;display:block}
+  .g3 .t{font-size:12.9px;font-weight:700;color:#F5F7FA;line-height:1.32}
+  .g3 .t span{display:block;font-weight:350;font-size:11.6px;color:#98A0B0;margin-top:3px;line-height:1.4}
+  .maillight{background:#F5F5F5;padding:26px 32px 28px}
+  .maillight h4{font-size:29px;font-weight:700;letter-spacing:-.03em;line-height:1.08;color:#101010}
+  .maillight p{margin-top:10px;font-size:15px;font-weight:350;color:#4A4A4A;max-width:430px}
+
+  .foot{margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.10);color:#8b90a5;font-size:14.5px;text-wrap:pretty}
+  .foot b{color:#E6EAF0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>International emphasis</h1>
+  <div class="lede">Mocks only — nothing applied to the live site or the emails. Everything below reuses copy that already exists on postinpremiere.com.</div>
+  <div class="rule"></div>
+  <div class="quote">
+    The section already exists. <b>“Created for editors everywhere”</b> is on the site today with captions, 180-day access, dubbed recordings and seven languages — it just sits after Speakers, roughly 60% down the page. Michelle never reached it. So this is a <b>placement problem, not a content problem</b>, which makes it a cheap fix and a good answer back to Adobe.
+  </div>
+</header>
+
+<h2>Site option A — slim strip directly under the hero</h2>
+<div class="note">Sits immediately below the hero so it is visible without scrolling. Minimal, does not compete with the headline, and gets the international signal above the fold. The full “Created for editors everywhere” section stays where it is further down.</div>
+<span class="tag">Recommended</span>
+<div class="stage">
+  <div class="fakehero">
+    <div class="eyebrow">Live Online Training</div>
+    <h3>Modern Post in Premiere</h3>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="ghost">Get Tickets</div>
+  </div>
+  <div class="stripA">
+    <div class="cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 4.4 6.3 4.4 9s-1.4 5.8-4.4 9c-3-3.2-4.4-6.3-4.4-9S9 6.2 12 3z"/></svg>
+      <div class="t">Join live from anywhere<span>Live on Zoom worldwide</span></div>
+    </div>
+    <div class="cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#6FA8FF" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+      <div class="t">Real-time captions<span>Built into every session</span></div>
+    </div>
+    <div class="cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+      <div class="t">Dubbed in 7 languages<span>On request</span></div>
+    </div>
+    <div class="cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+      <div class="t">180-day replay<span>Watch in your own time zone</span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Site option B — fuller band with the languages visible</h2>
+<div class="note">Same placement, more weight. Naming the seven languages is the single most convincing proof of international reach, and it is the part Michelle is most likely to want to see. Costs more vertical space above the fold.</div>
+<span class="tag alt">Stronger signal, heavier</span>
+<div class="stage">
+  <div class="fakehero">
+    <div class="eyebrow">Live Online Training</div>
+    <h3>Modern Post in Premiere</h3>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="ghost">Get Tickets</div>
+  </div>
+  <div class="bandB">
+    <div class="hd"><b>Created for editors everywhere.</b><i>Live worldwide, replayable in your own time zone.</i></div>
+    <div class="b3">
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+        <div class="t">Live on Zoom with real-time captions<span>Join live from anywhere with accessible captions built in.</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+        <div class="t">Professionally dubbed recordings<span>Available on request for multilingual access.</span></div>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+        <div class="t">180-day recording access<span>Replay every session on your own schedule.</span></div>
+      </div>
+    </div>
+    <div class="langs">
+      <span class="k">Language access</span>
+      <span class="chip">English</span><span class="chip">Spanish</span><span class="chip">French</span>
+      <span class="chip">German</span><span class="chip">Japanese</span><span class="chip">Portuguese</span><span class="chip">Italian</span>
+    </div>
+  </div>
+</div>
+
+<h2>Email — global row under the header</h2>
+<div class="note">The same three benefits, pulled out of the Event Details fine print and given their own row directly under the header plate. This is the change you already wanted to Event Details, done once: the box below then drops to date, time, platform and price, with the reassurance moved up here where it reads as an offer rather than a footnote.</div>
+<div class="stage" style="padding:30px 0;background:#0a0d16">
+  <div class="mailshell">
+    <div class="mailplate">
+      <div class="eyebrow">FMC &times; Adobe Present</div>
+      <div class="n">Modern Post<br>in Premiere</div>
+      <div class="r"></div>
+      <div class="b">Live Online Training <i>&nbsp;&bull;&nbsp;</i> 2 Days <i>&nbsp;&bull;&nbsp;</i> Sept 29&ndash;30, 2026</div>
+    </div>
+    <div class="mailbar"></div>
+    <div class="globalrow">
+      <div class="k">Created for editors everywhere</div>
+      <div class="g3">
+        <div class="c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M6.5 11.5h4M13.5 11.5h4M6.5 14.5h11"/></svg>
+          <div class="t">Real-time captions<span>Live, from anywhere</span></div>
+        </div>
+        <div class="c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M8.5 4v2M10.5 6c-.6 4-2.9 7.2-6.5 9M7 11c1.4 2.6 3.4 4.4 6 5.4"/><path d="M13 20l4-9 4 9M14.6 17h4.8"/></svg>
+          <div class="t">Dubbed on request<span>7 languages</span></div>
+        </div>
+        <div class="c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F49BE0" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.6V12l3.6 2.2"/></svg>
+          <div class="t">180-day replay<span>Your time zone</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="maillight">
+      <h4>One day. A completely new way to think about color.</h4>
+      <p>Adobe built Color Mode from the ground up for video editors. Day 1 walks you through the whole workflow.</p>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <b>Note on build:</b> the icons above are inline SVG, which is fine for the website. Email clients strip SVG, so the email row would ship as small PNGs on the CDN, same approach as the Zoom camcorder icon. <br><br>
+  <b>Nothing is applied.</b> Tell me which site option you want and whether the site edit is yours to make, and I will build it locally in the <code>adobe-color-preview</code> repo for review before anything goes near the live site.
+</div>
+
+</div>
+</body>
+</html>
