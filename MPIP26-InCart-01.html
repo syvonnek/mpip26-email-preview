@@ -51,6 +51,9 @@ isEnabledForEmailV3Rendering: true
     .plateName{ font-size:31px!important; letter-spacing:-.026em!important; }
     .plateBand{ font-size:11.5px!important; letter-spacing:.08em!important; }
     .plateRule{ width:92px!important; }
+    .plateTxt{ display:block!important; width:100%!important; padding:30px 22px 4px!important; }
+    .plateImgTd{ display:block!important; width:100%!important; padding:14px 22px 28px!important; }
+    .plateImgTd img{ width:100%!important; max-width:288px!important; height:auto!important; }
     .prLock{ margin-bottom:18px!important; }
     .prLockIcon{ padding-right:11px!important; }
     .prLockImg{ width:40px!important; height:40px!important; }
@@ -99,19 +102,33 @@ isEnabledForEmailV3Rendering: true
         </tr></table>
       </td></tr>
 
-      <!-- EVENT PLATE: background imagery + event identity -->
-      <tr><td class="plateCell" background="https://syvonnek.github.io/mpip26-email-preview/assets/plate-incart1-620x290.jpg" bgcolor="#080b12" valign="middle" style="background-color:#080b12; background-image:url('https://syvonnek.github.io/mpip26-email-preview/assets/plate-incart1-620x290.jpg'); background-position:center center; background-size:cover; background-repeat:no-repeat; padding:0;">
+      <!-- EMAIL HEADLINE -->
+      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:36px 36px 34px">
+        <h1 class="advHero" style="margin:0 0 16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">You don&rsquo;t need another webinar.</h1>
+        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">You need workflows you can actually use on the next project. One day on Color Mode, one day on AI-assisted post, both taught live.</div>
+      </td></tr>
+
+      <!-- ADOBE SPECTRUM BAR -->
+      <tr><td bgcolor="#F5F5F5" style="background:#F5F5F5; font-size:0; line-height:0;">
+        <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
+      </td></tr>
+
+      <!-- EVENT PLATE: gradient ground + Premiere interface image -->
+      <tr><td class="plateCell" background="https://syvonnek.github.io/mpip26-email-preview/assets/plate-grad-cyan-620x290.jpg" bgcolor="#080b12" valign="middle" style="background-color:#080b12; background-image:url('https://syvonnek.github.io/mpip26-email-preview/assets/plate-grad-cyan-620x290.jpg'); background-position:center center; background-size:cover; background-repeat:no-repeat; padding:0;">
         <!--[if gte mso 9]>
-        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" fill="true" stroke="false" style="width:620px; height:290px;">
-          <v:fill type="frame" src="https://syvonnek.github.io/mpip26-email-preview/assets/plate-incart1-620x290.jpg" color="#080b12" />
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" fill="true" stroke="false" style="width:620px; height:260px;">
+          <v:fill type="frame" src="https://syvonnek.github.io/mpip26-email-preview/assets/plate-grad-cyan-620x290.jpg" color="#080b12" />
           <v:textbox inset="0,0,0,0">
         <![endif]-->
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td class="platePad" style="padding:40px 36px 36px;">
-            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11.5px; font-weight:700; line-height:1; letter-spacing:.2em; text-transform:uppercase; color:#8b90a5; margin-bottom:16px;">FMC &times; Adobe Present</div>
-            <div class="plateName" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:44px; font-weight:800; line-height:1.04; letter-spacing:-.03em; color:#FFFFFF;">Modern Post<br>in Premiere</div>
-            <div class="plateRule" style="width:120px; height:4px; line-height:4px; font-size:0; border-radius:3px; margin-top:20px; background:#22D3EE; background:linear-gradient(90deg,#22D3EE 0%,#4F7CFF 40%,#8B5CF6 72%,#E34FCB 100%);">&nbsp;</div>
-            <div class="plateBand" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; line-height:1.5; letter-spacing:.1em; text-transform:uppercase; color:#E6EAF0; margin-top:22px;"><span style="white-space:nowrap;">Live Online Training</span> <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> 2 Days <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> <span style="color:#8FE3F5; white-space:nowrap;">Sept 29&ndash;30, 2026</span></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td class="plateTxt" valign="middle" style="padding:34px 8px 32px 36px;">
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11.5px; font-weight:700; line-height:1; letter-spacing:.2em; text-transform:uppercase; color:#8b90a5; margin-bottom:15px;">FMC &times; Adobe Present</div>
+            <div class="plateName" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:38px; font-weight:800; line-height:1.05; letter-spacing:-.028em; color:#FFFFFF;">Modern Post<br>in Premiere</div>
+            <div class="plateRule" style="width:110px; height:4px; line-height:4px; font-size:0; border-radius:3px; margin-top:17px; background:#22D3EE; background:linear-gradient(90deg,#22D3EE 0%,#4F7CFF 40%,#8B5CF6 72%,#E34FCB 100%);">&nbsp;</div>
+            <div class="plateBand" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12.8px; font-weight:700; line-height:1.55; letter-spacing:.09em; text-transform:uppercase; color:#E6EAF0; margin-top:18px;"><span style="white-space:nowrap;">Live Online Training</span> <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> 2 Days <span style="color:#5b6480;">&nbsp;&bull;&nbsp;</span> <span style="color:#8FE3F5; white-space:nowrap;">Sept 29&ndash;30, 2026</span></div>
+          </td>
+          <td class="plateImgTd" valign="middle" width="220" style="padding:0 28px 0 0;">
+            <img src="https://syvonnek.github.io/mpip26-email-preview/assets/plate-ui-ic1.jpg" width="192" height="108" alt="Adobe Premiere interface" style="display:block; width:192px; height:108px; border-radius:9px; border:1px solid rgba(255,255,255,.16);">
           </td>
         </tr></table>
         <!--[if gte mso 9]>
@@ -137,17 +154,6 @@ isEnabledForEmailV3Rendering: true
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12.9px; font-weight:700; color:#F5F7FA; line-height:1.3;">180-day replay<span style="display:block; font-weight:350; font-size:11.6px; color:#98A0B0; margin-top:2px;">Your time zone</span></div>
           </td>
         </tr></table>
-      </td></tr>
-
-      <!-- ADOBE SPECTRUM BAR -->
-      <tr><td bgcolor="#F5F5F5" style="background:#F5F5F5; font-size:0; line-height:0;">
-        <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
-      </td></tr>
-
-      <!-- EMAIL HEADLINE -->
-      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:36px 36px 34px">
-        <h1 class="advHero" style="margin:0 0 16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">You don&rsquo;t need another webinar.</h1>
-        <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">You need workflows you can actually use on the next project. One day on Color Mode, one day on AI-assisted post, both taught live.</div>
       </td></tr>
 
       <!-- INTRO -->
