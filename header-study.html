@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPIP26 — Header Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0d16;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;padding:0 0 80px}
+  .top{padding:44px 24px 10px;text-align:center;color:#f2f4fa;max-width:760px;margin:0 auto}
+  .top h1{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .top p{margin-top:10px;color:#8b90a5;font-size:14.5px;line-height:1.6}
+  .sec{max-width:700px;margin:0 auto;padding:44px 24px 0}
+  .hd{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+  .hd .n{width:26px;height:26px;border-radius:50%;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.45);
+    color:#22D3EE;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:2px}
+  .hd .t{color:#f2f4fa;font-size:16.5px;font-weight:700}
+  .hd .d{color:#7c8296;font-size:13px}
+  .note{color:#8b90a5;font-size:13.5px;line-height:1.6;margin:0 0 16px 38px;max-width:600px}
+  .frame{width:100%;max-width:620px;margin:0 auto;border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;background:#000}
+
+  /* shared email-accurate bits */
+  .mast{background:#fff;padding:22px 36px;display:flex;align-items:center;justify-content:space-between}
+  .mast img{display:block}
+  .bar{height:52px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .blk{background:#F5F5F5;padding:44px 36px 30px}
+
+  /* ---------- CURRENT ---------- */
+  .cur .lock{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .cur .lock img{width:46px;height:46px;border-radius:10px;display:block}
+  .cur .k{font-size:11.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#7A7A84}
+  .cur .nm{font-size:21px;font-weight:800;color:#101010;letter-spacing:-.021em;margin-top:5px;line-height:1.2}
+  .cur h2{font-size:46px;font-weight:700;line-height:1.06;letter-spacing:-.032em;color:#101010;margin-bottom:20px}
+  .cur .sub{font-size:17.5px;font-weight:350;line-height:1.52;color:#4A4A4A;max-width:480px}
+  .cur .pill{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#fff;border:1.5px solid #22D3EE;
+    border-radius:100px;padding:9px 20px;font-size:16px;font-weight:700}
+  .cur .pill .a{letter-spacing:.12em;text-transform:uppercase;color:#101010}
+  .cur .pill .dot{color:#8B5CF6}
+  .cur .pill .b{letter-spacing:.04em;color:#0F8A9E}
+
+  /* ---------- A: EVENT-FIRST ---------- */
+  .a .k{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A7A84;margin-bottom:14px}
+  .a .nm{font-size:52px;font-weight:800;color:#101010;letter-spacing:-.032em;line-height:1.02}
+  .a .band{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:20px;border-top:2px solid #101010;
+    border-bottom:1px solid rgba(16,16,16,.18);padding:13px 0}
+  .a .band span{font-size:14px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#101010}
+  .a .band i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#8B5CF6;margin:0 14px;font-style:normal}
+  .a .band .dt{color:#0F8A9E}
+  .a .sub{font-size:17.5px;font-weight:350;line-height:1.5;color:#4A4A4A;max-width:470px;margin-top:22px}
+  .a .sub strong{font-weight:700;color:#101010}
+
+  /* ---------- B: TICKET / STUB ---------- */
+  .b .k{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7A7A84;margin-bottom:14px}
+  .b .nm{font-size:50px;font-weight:800;color:#101010;letter-spacing:-.032em;line-height:1.03}
+  .b .card{margin-top:24px;background:#fff;border:1px solid rgba(16,16,16,.14);border-radius:12px;overflow:hidden;
+    box-shadow:0 2px 14px rgba(16,16,16,.07)}
+  .b .card .strip{height:4px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .b .grid{display:flex}
+  .b .cell{flex:1;padding:15px 18px;border-right:1px solid rgba(16,16,16,.10)}
+  .b .cell:last-child{border-right:0}
+  .b .cl{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8A8A94;margin-bottom:5px}
+  .b .cv{font-size:16px;font-weight:700;color:#101010;letter-spacing:-.01em;line-height:1.25}
+  .b .cv.acc{color:#0F8A9E}
+  .b .sub{font-size:17.5px;font-weight:350;line-height:1.5;color:#4A4A4A;max-width:470px;margin-top:22px}
+
+  /* ---------- C: DARK EVENT PLATE ---------- */
+  .c .plate{background:#080b12;padding:40px 36px 34px;position:relative;overflow:hidden}
+  .c .plate:before{content:"";position:absolute;inset:0;
+    background:radial-gradient(620px 300px at 12% -20%, rgba(34,211,238,.20), transparent 62%)}
+  .c .inner{position:relative;z-index:2}
+  .c .k{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;margin-bottom:16px}
+  .c .nm{font-size:52px;font-weight:800;color:#fff;letter-spacing:-.032em;line-height:1.02}
+  .c .rule{width:120px;height:4px;border-radius:3px;margin-top:20px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .c .band{display:flex;flex-wrap:wrap;align-items:center;margin-top:22px}
+  .c .band span{font-size:14px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#E6EAF0}
+  .c .band i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#22D3EE;margin:0 14px;font-style:normal}
+  .c .band .dt{color:#8FE3F5}
+  .c .sub{font-size:17px;font-weight:350;line-height:1.55;color:#AAB2C0;max-width:470px;margin-top:20px}
+  .c .light{background:#F5F5F5;padding:30px 36px 34px}
+  .c h2{font-size:38px;font-weight:700;line-height:1.08;letter-spacing:-.03em;color:#101010}
+  .c .std{font-size:17px;font-weight:350;line-height:1.52;color:#4A4A4A;max-width:470px;margin-top:14px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>Header study — making the event the headline</h1>
+  <p>Same masthead, same spectrum bar, same email body below. Only the light header block changes. Current version first for comparison, then three directions.</p>
+</div>
+
+<!-- CURRENT -->
+<div class="sec">
+  <div class="hd"><div class="n">0</div><div><div class="t">Current</div></div></div>
+  <p class="note">Event name sits at 21px, smaller than the per-email headline. The date/format pill is below the headline and reads as a footnote. First impression is Adobe product marketing.</p>
+  <div class="frame cur">
+    <div class="mast">
+      <img src="assets/fmc-logo-nav.png" width="128" alt="FMC">
+      <img src="assets/adobe-logo-nav.png" width="91" alt="Adobe">
+    </div>
+    <div class="blk">
+      <div class="lock">
+        <img src="assets/pr-icon-lockup.png" alt="">
+        <div><div class="k">FMC &times; Adobe Present</div><div class="nm">Modern Post in Premiere</div></div>
+      </div>
+      <h2>One day. A completely new way to think about color.</h2>
+      <div class="sub">Adobe built Color Mode from the ground up for video editors. Day 1 walks you through the whole workflow.</div>
+      <div class="pill"><span class="a">Live Online Training</span><span class="dot">&bull;</span><span class="b">SEPT 29&ndash;30, 2026</span></div>
+    </div>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<!-- A -->
+<div class="sec">
+  <div class="hd"><div class="n">A</div><div><div class="t">Event-first</div></div></div>
+  <p class="note">Event name becomes the display type. Format, length and date become a hard structural band directly under it, not a pill. The per-email angle drops to the standfirst. Cleanest, closest to your existing system.</p>
+  <div class="frame a">
+    <div class="mast">
+      <img src="assets/fmc-logo-nav.png" width="128" alt="FMC">
+      <img src="assets/adobe-logo-nav.png" width="91" alt="Adobe">
+    </div>
+    <div class="blk">
+      <div class="k">FMC &times; Adobe Present</div>
+      <div class="nm">Modern Post<br>in Premiere</div>
+      <div class="band">
+        <span>Live Online Training</span><i></i>
+        <span>2 Days</span><i></i>
+        <span class="dt">Sept 29&ndash;30, 2026</span>
+      </div>
+      <div class="sub"><strong>Day 1: Color Mode.</strong> Adobe built it from the ground up for video editors. This day walks you through the whole workflow.</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<!-- B -->
+<div class="sec">
+  <div class="hd"><div class="n">B</div><div><div class="t">Ticket stub</div></div></div>
+  <p class="note">Same promotion of the event name, but the logistics sit in a bordered three-cell card that reads like a ticket. Highest information density and the most obviously "an event" of the three.</p>
+  <div class="frame b">
+    <div class="mast">
+      <img src="assets/fmc-logo-nav.png" width="128" alt="FMC">
+      <img src="assets/adobe-logo-nav.png" width="91" alt="Adobe">
+    </div>
+    <div class="blk">
+      <div class="k">FMC &times; Adobe Present</div>
+      <div class="nm">Modern Post<br>in Premiere</div>
+      <div class="card">
+        <div class="strip"></div>
+        <div class="grid">
+          <div class="cell"><div class="cl">Format</div><div class="cv">Live Online</div></div>
+          <div class="cell"><div class="cl">Length</div><div class="cv">2 Days</div></div>
+          <div class="cell"><div class="cl">Dates</div><div class="cv acc">Sept 29&ndash;30</div></div>
+        </div>
+      </div>
+      <div class="sub">Day 1 is Color Mode, built from the ground up for video editors. Day 2 is AI-assisted post.</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<!-- C -->
+<div class="sec">
+  <div class="hd"><div class="n">C</div><div><div class="t">Dark event plate</div></div></div>
+  <p class="note">Splits the header: a dark plate that is purely event identity, then the light block carries the per-email headline. Strongest separation between "the event" and "this email," and the dark plate matches the body. Biggest departure from what you have.</p>
+  <div class="frame c">
+    <div class="mast">
+      <img src="assets/fmc-logo-nav.png" width="128" alt="FMC">
+      <img src="assets/adobe-logo-nav.png" width="91" alt="Adobe">
+    </div>
+    <div class="plate">
+      <div class="inner">
+        <div class="k">FMC &times; Adobe Present</div>
+        <div class="nm">Modern Post<br>in Premiere</div>
+        <div class="rule"></div>
+        <div class="band">
+          <span>Live Online Training</span><i></i>
+          <span>2 Days</span><i></i>
+          <span class="dt">Sept 29&ndash;30, 2026</span>
+        </div>
+      </div>
+    </div>
+    <div class="bar"></div>
+    <div class="light">
+      <h2>A completely new way to think about color.</h2>
+      <div class="std">Adobe built Color Mode from the ground up for video editors. Day 1 walks you through the whole workflow.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
