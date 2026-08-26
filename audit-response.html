@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPIP26 — Audit Response</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06080f;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;
+       padding:0 0 120px;line-height:1.55}
+  .wrap{max-width:940px;margin:0 auto;padding:0 26px}
+  header{padding:64px 0 10px}
+  h1{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+  .lede{margin-top:14px;color:#AAB2C0;font-size:17px;max-width:660px;text-wrap:pretty}
+  .rule{height:4px;width:130px;border-radius:3px;margin:26px 0 0;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+
+  .tally{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 8px}
+  .t{flex:1;min-width:190px;padding:18px 20px;border-radius:14px;background:#0b0f19;border:1px solid rgba(255,255,255,.10)}
+  .t .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+  .t .l{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8b90a5;margin-top:4px}
+  .t.y .n{color:#5BE1A0} .t.n_ .n{color:#FF7A9C} .t.q .n{color:#F0C46B}
+
+  h2{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+     margin:54px 0 18px;padding-top:26px;border-top:1px solid rgba(255,255,255,.10)}
+
+  .item{background:#0b0f19;border:1px solid rgba(255,255,255,.10);border-radius:14px;
+        padding:20px 22px;margin-bottom:12px;border-left-width:3px}
+  .item.yes{border-left-color:#5BE1A0}
+  .item.no{border-left-color:#FF7A9C}
+  .item.dec{border-left-color:#F0C46B}
+  .top{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  .badge{flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:5px 10px;border-radius:100px;margin-top:2px}
+  .yes .badge{background:rgba(91,225,160,.14);color:#5BE1A0;border:1px solid rgba(91,225,160,.35)}
+  .no .badge{background:rgba(255,122,156,.13);color:#FF7A9C;border:1px solid rgba(255,122,156,.32)}
+  .dec .badge{background:rgba(240,196,107,.13);color:#F0C46B;border:1px solid rgba(240,196,107,.32)}
+  .ttl{flex:1;min-width:240px;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F7FA}
+  .why{margin-top:9px;color:#AAB2C0;font-size:15px;text-wrap:pretty}
+  .why b{color:#E6EAF0;font-weight:600}
+  .ev{margin-top:11px;padding:11px 14px;border-radius:9px;background:#070a12;
+      border:1px solid rgba(34,211,238,.20);font-size:14px;color:#CDD5E1}
+  .ev .k{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#22D3EE;display:block;margin-bottom:5px}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:#131a29;
+       padding:2px 6px;border-radius:5px;color:#8FE3F5}
+
+  .callout{background:linear-gradient(120deg,rgba(227,79,203,.10),rgba(139,92,246,.07));
+    border:1px solid rgba(227,79,203,.30);border-radius:14px;padding:22px 24px;margin:30px 0 0}
+  .callout .h{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F49BE0;margin-bottom:9px}
+  .callout p{color:#DCE2EC;font-size:15.5px;text-wrap:pretty}
+
+  ol.plan{counter-reset:s;list-style:none;margin-top:6px}
+  ol.plan li{counter-increment:s;position:relative;padding:13px 0 13px 46px;
+    border-bottom:1px solid rgba(255,255,255,.07);color:#DCE2EC;font-size:15.5px}
+  ol.plan li:last-child{border-bottom:0}
+  ol.plan li:before{content:counter(s);position:absolute;left:0;top:12px;width:28px;height:28px;border-radius:50%;
+    background:rgba(34,211,238,.13);border:1px solid rgba(34,211,238,.38);color:#22D3EE;
+    font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  ol.plan li b{color:#F5F7FA;font-weight:700}
+  .foot{margin-top:16px;color:#8b90a5;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Audit response</h1>
+  <div class="lede">My verdict on each recommendation in the ChatGPT audit. Nothing has been changed. Items are grouped by whether I think we should act, skip, or decide together.</div>
+  <div class="rule"></div>
+</header>
+
+<div class="tally">
+  <div class="t y"><div class="n">8</div><div class="l">Worth doing</div></div>
+  <div class="t n_"><div class="n">6</div><div class="l">Would skip</div></div>
+  <div class="t q"><div class="n">4</div><div class="l">Your call</div></div>
+</div>
+
+<div class="callout">
+  <div class="h">Read the audit with this caveat</div>
+  <p>It opens by calling the missing Launch Announcement a “first correction.” That is not a defect — you told me to pull it because it already sent. The audit has no way to know that, which is a fair reminder that it is judging the artifact without the decisions behind it. Several copy rewrites below fall into the same trap.</p>
+</div>
+
+<h2>Do these — real problems, cheap fixes</h2>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Rename “Closing” to “Session 6” in the AI Track email</div></div>
+  <div class="why">The only hard factual error the audit found, and it is correct.</div>
+  <div class="ev"><span class="k">Verified on the live site just now</span>
+    The site labels Day 2 as Session 1 through <b>Session 6</b>. Our email labels the last one <code>Closing</code>. The live site is the source of truth, so ours is wrong.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Move the first button in One Week Out below the time-zone grid</div></div>
+  <div class="why">The best UX catch in the audit. The email says <b>“Wherever you are, here is when it starts”</b> and then interrupts with a button <i>before</i> showing the start times. It answers its own question late.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Single dominant CTA in Last Call and both In-Cart pushes</div></div>
+  <div class="why">Demote <b>View Program</b> from an equal-weight button to a small text link in the three urgency emails. Two same-size buttons split the decision at exactly the moment you want one action. Sound reasoning, low risk.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Fix the stranded “2026” on mobile</div></div>
+  <div class="why">The new date band wraps awkwardly at narrow widths. Cheap fix, and it is in the header of all six.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Bump session descriptions from 12.5px to ~14px on mobile</div></div>
+  <div class="why">Agrees with what you already flagged about the grid text. The schedule is dense and 12.5px is genuinely small on a phone.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Split the preview page into Main Campaign and In-Cart</div></div>
+  <div class="why">True and easy — In-Cart 1 is dated Aug 26 but sits fifth. This only touches the preview page, not the emails themselves, so there is no deliverable risk.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">“Finish Registering” → “Continue Registration”</div></div>
+  <div class="why">Only if Zoom does not actually restore a saved cart. I would verify that first, but I suspect the audit is right and the current wording promises something the flow does not deliver.</div>
+</div>
+
+<div class="item yes">
+  <div class="top"><span class="badge">Do</span><div class="ttl">Pass the in-cart triggering note to Tyree</div></div>
+  <div class="why">Behavior-triggered sends, suppressing registrants from promo workflows, and preventing an in-cart landing the same day as Last Call are all correct. Not email HTML though — that is a HubSpot workflow decision for Tyree.</div>
+</div>
+
+<h2>Skip these</h2>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">Rewriting “AI is not the workflow. You are.”</div></div>
+  <div class="why">You dictated that line specifically, and I set it today. The proposed replacement, <b>“AI solves the task. You shape the story,”</b> is softer and more generic. The audit is overriding a decision it did not know you made.</div>
+</div>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">The bulk of the copy rewrites</div></div>
+  <div class="why">Most are lateral, not better. <b>“Color Mode, from first setup to final grade”</b> is more functional than <b>“One day. A completely new way to think about color”</b> but also flatter and more like every other training email. Your voice guide asks for educational and direct, which the current copy already is. Rewriting eight headlines and a dozen paragraphs is a lot of churn and re-approval for no measurable gain.</div>
+</div>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">Adding “Speaker: To be announced” to Session 2</div></div>
+  <div class="why">The recommendation contradicts the campaign plan, which says explicitly: <b>“Day 2 has several Speaker TBD slots: copy below names sessions, never TBD speakers.”</b></div>
+  <div class="ev"><span class="k">But there is a real inconsistency underneath</span>
+    Our email already shows <code>Speaker: To be announced</code> three times, so we are not following that rule anyway. The live site shows <b>Speaker TBA</b> on four Day 2 sessions. So we are inconsistent with both the plan and the site. Worth settling — see “Your call” below.</div>
+</div>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">Changing the dark-mode declaration</div></div>
+  <div class="why">The audit says declaring only a dark colour scheme “still needs explicit dark-mode protection.” That is speculation from reading source, not a render test. <code>color-scheme:dark</code> alone is your rule, earned through actual Litmus testing. I would not undo it on an AI’s reading of the markup.</div>
+</div>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">Turning View Full Program into a second registration button</div></div>
+  <div class="why">In Emails 2 and 3 it proposes <b>“Choose Day 1 or Both”</b> where View Full Program currently sits. That puts two competing registration buttons within a screen of each other. The audit is right that a “view the program” link is odd directly after listing the whole program — but the fix is to cut or demote it, not to duplicate the primary CTA.</div>
+</div>
+
+<div class="item no">
+  <div class="top"><span class="badge">Skip</span><div class="ttl">Treating the missing Launch email as a defect</div></div>
+  <div class="why">Already sent, deliberately removed. No action.</div>
+</div>
+
+<h2>Your call</h2>
+
+<div class="item dec">
+  <div class="top"><span class="badge">Decide</span><div class="ttl">How to handle unannounced Day 2 speakers</div></div>
+  <div class="why">Three options: match the live site and show <b>Speaker TBA</b> on all four, follow the plan and remove all speaker lines where unknown, or leave it inconsistent. Your own rule says the live site outranks Tyree’s planning docs, which points to matching the site — but it is a visible copy decision, so I want you to pick.</div>
+</div>
+
+<div class="item dec">
+  <div class="top"><span class="badge">Decide</span><div class="ttl">The Content Credentials and Firefly Boards copy additions</div></div>
+  <div class="why">The audit proposes specific new sentences for Sessions 3 and 5. Those are factual claims about session content, so I would check them against the live session descriptions before adding. Worth doing if they check out.</div>
+</div>
+
+<div class="item dec">
+  <div class="top"><span class="badge">Decide</span><div class="ttl">Real cross-client testing</div></div>
+  <div class="why">The audit’s dark-mode worry is unverified, and so is everything else about rendering. Nothing has been through HubSpot or a real Outlook. This is the actual finish line and no audit substitutes for it.</div>
+</div>
+
+<div class="item dec">
+  <div class="top"><span class="badge">Decide</span><div class="ttl">Still open from before the audit</div></div>
+  <div class="why">Header imagery direction (source photos vs. a designed graphic — the Last Call study is waiting on you), and whether to cut Event Details down to the three emails where logistics actually drive the decision.</div>
+</div>
+
+<h2>If you want a running order</h2>
+<ol class="plan">
+  <li><b>Session 6 rename</b> — factual error, two minutes.</li>
+  <li><b>Mobile type</b> — stranded “2026”, session text to 14px.</li>
+  <li><b>CTA structure</b> — One Week Out button placement, single dominant CTA in the three urgency emails.</li>
+  <li><b>Preview page</b> — split Main Campaign from In-Cart.</li>
+  <li><b>Header direction</b> — pick from the Last Call study, roll to all six.</li>
+  <li><b>Event Details</b> — decide full box vs. one-line in the deep dives.</li>
+  <li><b>HubSpot import and real client testing</b> — the actual finish line.</li>
+</ol>
+<div class="foot">Nothing above has been applied. Say which items you want and I will work down the list.</div>
+
+</div>
+</body>
+</html>
