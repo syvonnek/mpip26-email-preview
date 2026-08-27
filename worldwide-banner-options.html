@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worldwide banner options</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;350;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0b0d12;color:#E6EAF0;font-family:'Source Sans 3',-apple-system,Arial,sans-serif;line-height:1.5;padding-bottom:110px}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .intro{padding:54px 0 4px}
+  .intro h1{font-size:34px;font-weight:800;letter-spacing:-.03em}
+  .intro p{margin-top:12px;color:#AAB2C0;font-size:16px;max-width:66ch;text-wrap:pretty}
+  .rule{height:4px;width:120px;border-radius:3px;margin-top:22px;
+    background:linear-gradient(90deg,#22D3EE,#4F7CFF 40%,#8B5CF6 72%,#E34FCB)}
+  .lab{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b90a5;
+    margin:46px 0 6px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10)}
+  .note{color:#AAB2C0;font-size:14.5px;margin-bottom:16px;max-width:68ch;text-wrap:pretty}
+  .note b{color:#E6EAF0}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 10px;border-radius:100px;margin-bottom:11px;
+    background:rgba(91,225,160,.13);color:#5BE1A0;border:1px solid rgba(91,225,160,.34)}
+  .h{font-size:11px;color:#6b7488;margin-top:7px;font-style:italic}
+
+  .shell{max-width:620px;background:#000;border:1px solid rgba(255,255,255,.28);border-radius:16px;overflow:hidden}
+  .bar{height:7px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 34%,#8B5CF6 67%,#E34FCB)}
+  .plate{position:relative;padding:30px 15px 28px 34px;display:flex;align-items:center;gap:14px;
+    background:#080b12 url('assets/plate-bg-620x360.jpg') center/cover no-repeat}
+  .pl{flex:1;min-width:0}
+  .k{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#98A0B0}
+  .k b{color:#fff}.k i{color:#5b6480;font-style:normal}
+  .n{margin-top:13px;font-size:44px;font-weight:900;line-height:1.04;letter-spacing:-.028em;color:#fff}
+  .sub{margin-top:9px;font-size:17px;font-weight:700;letter-spacing:-.018em;white-space:nowrap;
+    background:linear-gradient(92deg,#5BD2FF,#7FA0FF 40%,#B98BFF 72%,#E48FD9);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hr{height:1px;margin-top:15px;background:linear-gradient(90deg,#22D3EE,#4F7CFF 45%,#8B5CF6 85%,rgba(139,92,246,0))}
+  .live{margin-top:14px;font-size:12.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#FF5B4A}
+  .dt{margin-top:7px;font-size:19px;font-weight:800;color:#fff}
+  .f1{margin-top:7px;font-size:12.2px;font-weight:600;color:#B9C0D0}
+  .f2{margin-top:3px;font-size:12.4px;font-weight:700;color:#fff}
+  .pimg{flex:0 0 auto;width:170px;height:120px;border-radius:8px;border:1px solid rgba(255,255,255,.16);
+    background:linear-gradient(140deg,#1c2434,#0c111a);display:flex;align-items:center;justify-content:center;
+    font-size:9.5px;color:#5b6480;letter-spacing:.1em;text-transform:uppercase}
+  .body{padding:26px 30px;text-align:center;font-size:15px;color:#D7DCE5}
+
+  /* A — hairline text ribbon */
+  .optA{padding:11px 20px;text-align:center;background:#05070e;border-top:1px solid rgba(255,255,255,.09);
+    border-bottom:1px solid rgba(255,255,255,.09);
+    font-size:11.6px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#9AA2B4}
+  .optA em{font-style:normal;color:#8FE3F5}
+  .optA span{color:#4a5266;padding:0 7px}
+
+  /* B — spectrum-edge banner w/ globe */
+  .optB{padding:13px 20px;text-align:center;
+    background:linear-gradient(90deg, rgba(34,211,238,.16), rgba(139,92,246,.13) 52%, rgba(227,79,203,.11));
+    border-top:1px solid rgba(34,211,238,.34);border-bottom:1px solid rgba(255,255,255,.10)}
+  .optB .t{display:inline-block;font-size:13px;font-weight:700;color:#EAF0F8;letter-spacing:.01em}
+  .optB .g{display:inline-block;width:15px;height:15px;border-radius:50%;border:1.6px solid #8FE3F5;
+    margin-right:8px;vertical-align:-2px;position:relative}
+  .optB .g:after{content:"";position:absolute;inset:1px 4px;border:1.4px solid #8FE3F5;border-radius:50%}
+
+  /* C — inside the plate, no new row */
+  .optC-line{margin-top:11px;padding-top:10px;border-top:1px solid rgba(255,255,255,.14);
+    font-size:11.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#8FE3F5;white-space:nowrap}
+
+  /* D — three micro-pills */
+  .optD{padding:14px 20px;text-align:center;background:#05070e;
+    border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
+  .pill{display:inline-block;margin:3px 4px;padding:6px 13px;border-radius:100px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+    font-size:11.8px;font-weight:700;color:#DCE2EC;letter-spacing:.02em}
+  .pill i{font-style:normal;color:#8FE3F5;margin-right:5px}
+
+  .foot{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);
+    color:#8b90a5;font-size:14.5px;max-width:68ch;text-wrap:pretty}
+  .foot b{color:#E6EAF0}
+  @media(max-width:640px){.plate{flex-direction:column;align-items:flex-start}.pimg{width:100%;height:96px}.sub{white-space:normal}.optC-line{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="intro">
+  <h1>Worldwide, above the fold</h1>
+  <p>Four ways to signal global access inside the first screen, without gutting the full section lower down. Each shown under the real branded header so you can judge it in place.</p>
+  <div class="rule"></div>
+</div>
+
+<!-- A -->
+<div class="lab">A &mdash; Hairline ribbon</div>
+<p class="note">One uppercase line, no icons, ~34px tall. Reads as a <b>spec strip</b>, like a product footnote. Cheapest possible presence &mdash; almost impossible to feel redundant because it&rsquo;s clearly a summary, not a section.</p>
+<div class="shell">
+  <div class="plate"><div class="pl">
+    <div class="k"><b>FMC</b> <i>&times;</i> <b>Adobe</b> Present</div>
+    <div class="n">Modern Post<br>in Premiere</div>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="hr"></div>
+    <div class="live">&#9673; Live Online Training</div>
+    <div class="dt">September 29&ndash;30, 2026</div>
+    <div class="f1">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; Live on Zoom</div>
+    <div class="f2">$99 one day &nbsp;&middot;&nbsp; $149 both days</div>
+  </div><div class="pimg">Premiere UI</div></div>
+  <div class="optA">Captions <span>&middot;</span> <em>7 languages</em> <span>&middot;</span> 180-day replay <span>&middot;</span> Join from anywhere</div>
+  <div class="body">Foundations, primary correction, secondaries, creative grading, and a live Adobe Q&amp;A.</div>
+</div>
+
+<!-- B -->
+<div class="lab">B &mdash; Spectrum banner with a sentence</div>
+<p class="note">A tinted band with a globe mark and one readable sentence rather than a list. Warmer and more human than A, and the only option that actually <b>says the idea</b> instead of listing features. ~46px.</p>
+<span class="tag">Recommended</span>
+<div class="shell">
+  <div class="plate"><div class="pl">
+    <div class="k"><b>FMC</b> <i>&times;</i> <b>Adobe</b> Present</div>
+    <div class="n">Modern Post<br>in Premiere</div>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="hr"></div>
+    <div class="live">&#9673; Live Online Training</div>
+    <div class="dt">September 29&ndash;30, 2026</div>
+    <div class="f1">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; Live on Zoom</div>
+    <div class="f2">$99 one day &nbsp;&middot;&nbsp; $149 both days</div>
+  </div><div class="pimg">Premiere UI</div></div>
+  <div class="optB"><span class="t"><span class="g"></span>Join live from anywhere &mdash; captions, seven languages, 180-day replay.</span></div>
+  <div class="body">Foundations, primary correction, secondaries, creative grading, and a live Adobe Q&amp;A.</div>
+</div>
+
+<!-- C -->
+<div class="lab">C &mdash; Inside the plate, zero new height</div>
+<p class="note">No banner at all &mdash; one more line inside the branded header, under the price, divided by a hairline. Adds <b>nothing</b> to the email&rsquo;s length and cannot read as a duplicate section because it&rsquo;s part of the header block. Trade-off: the plate is getting dense.</p>
+<div class="shell">
+  <div class="plate"><div class="pl">
+    <div class="k"><b>FMC</b> <i>&times;</i> <b>Adobe</b> Present</div>
+    <div class="n">Modern Post<br>in Premiere</div>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="hr"></div>
+    <div class="live">&#9673; Live Online Training</div>
+    <div class="dt">September 29&ndash;30, 2026</div>
+    <div class="f1">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; Live on Zoom</div>
+    <div class="f2">$99 one day &nbsp;&middot;&nbsp; $149 both days</div>
+    <div class="optC-line">Worldwide &middot; Captions &middot; 7 languages &middot; 180-day replay</div>
+  </div><div class="pimg">Premiere UI</div></div>
+  <div class="body">Foundations, primary correction, secondaries, creative grading, and a live Adobe Q&amp;A.</div>
+</div>
+
+<!-- D -->
+<div class="lab">D &mdash; Three micro-pills</div>
+<p class="note">Chip treatment, echoing the languages bar further down so the two feel like a family. Most visually distinct of the four, but also the most likely to feel like a <b>smaller copy</b> of the section below.</p>
+<div class="shell">
+  <div class="plate"><div class="pl">
+    <div class="k"><b>FMC</b> <i>&times;</i> <b>Adobe</b> Present</div>
+    <div class="n">Modern Post<br>in Premiere</div>
+    <div class="sub">Color Mode + AI-Assisted Post-Production</div>
+    <div class="hr"></div>
+    <div class="live">&#9673; Live Online Training</div>
+    <div class="dt">September 29&ndash;30, 2026</div>
+    <div class="f1">9 AM&ndash;5:30 PM ET &nbsp;&middot;&nbsp; Live on Zoom</div>
+    <div class="f2">$99 one day &nbsp;&middot;&nbsp; $149 both days</div>
+  </div><div class="pimg">Premiere UI</div></div>
+  <div class="optD">
+    <span class="pill"><i>&#9673;</i>Join from anywhere</span>
+    <span class="pill"><i>&#9673;</i>7 languages</span>
+    <span class="pill"><i>&#9673;</i>180-day replay</span>
+  </div>
+  <div class="body">Foundations, primary correction, secondaries, creative grading, and a live Adobe Q&amp;A.</div>
+</div>
+
+<div class="foot">
+  <b>On the redundancy worry:</b> a short banner up top and the full section lower down is not repetition if they do different jobs &mdash; the banner is a <i>headline</i> (&ldquo;this works for you, wherever you are&rdquo;), the section is the <i>proof</i> (icons, all seven languages, the specifics). That is the same relationship as a subject line and the email body. It only becomes redundant if the banner tries to list everything the section already lists &mdash; which is exactly why B says one sentence instead of four features.
+</div>
+
+</div>
+</body>
+</html>
