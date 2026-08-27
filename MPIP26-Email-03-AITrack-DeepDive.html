@@ -42,9 +42,10 @@ isEnabledForEmailV3Rendering: true
     .dayTxt{ display:block!important; width:100%!important; padding-bottom:16px!important; }
     .dayGap{ display:none!important; }
     .dayThumb{ display:block!important; width:100%!important; text-align:left!important; padding:0!important; }
-    .srow-txt{ display:block!important; width:100%!important; padding:16px 18px 4px 20px!important; }
+    .srow-txt{ display:block!important; width:auto!important; max-width:100%!important; padding:16px 18px 4px 18px!important; }
     .srow-title{ text-wrap:pretty!important; }
-    .srow-img{ display:block!important; width:100%!important; padding:0 18px 16px 20px!important; }
+    .srowTbl{ width:100%!important; table-layout:fixed!important; }
+    .srow-img{ display:block!important; width:auto!important; max-width:100%!important; padding:0 18px 16px 18px!important; }
     .srow-img img{ width:100%!important; max-width:330px!important; height:auto!important; }
     .sdesc{ font-size:14px!important; line-height:1.5!important; }
     .dayThumb img{ width:100%!important; max-width:100%!important; height:auto!important; }
@@ -191,7 +192,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 1 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(34,211,238,.16) 0%, rgba(34,211,238,.03) 45%, transparent 75%);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#22D3EE" style="background:#22D3EE; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#22D3EE;">Session 1 &nbsp;&middot;&nbsp; 9:00&ndash;10:30 AM ET</div>
@@ -205,7 +206,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 2 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(56,180,244,.16) 0%, rgba(56,180,244,.03) 45%, transparent 75%); border-top:1px solid rgba(255,255,255,.07);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#38B4F4" style="background:#38B4F4; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#38B4F4;">Session 2 &nbsp;&middot;&nbsp; 10:45 AM&ndash;12:15 PM ET</div>
@@ -218,7 +219,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 3 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(79,124,255,.16) 0%, rgba(79,124,255,.03) 45%, transparent 75%); border-top:1px solid rgba(255,255,255,.07);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#4F7CFF" style="background:#4F7CFF; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#4F7CFF;">Session 3 &nbsp;&middot;&nbsp; 1:00&ndash;2:30 PM ET</div>
@@ -232,7 +233,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 4 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(107,106,248,.16) 0%, rgba(107,106,248,.03) 45%, transparent 75%); border-top:1px solid rgba(255,255,255,.07);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#6B6AF8" style="background:#6B6AF8; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#9695FA;">Session 4 &nbsp;&middot;&nbsp; 2:30&ndash;4:00 PM ET</div>
@@ -245,7 +246,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 5 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(139,92,246,.16) 0%, rgba(139,92,246,.03) 45%, transparent 75%); border-top:1px solid rgba(255,255,255,.07);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#8B5CF6" style="background:#8B5CF6; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#B79CF7;">Session 5 &nbsp;&middot;&nbsp; 4:15&ndash;4:45 PM ET</div>
@@ -258,7 +259,7 @@ isEnabledForEmailV3Rendering: true
 
           <!-- Row 6 -->
           <tr><td style="background:#0a0d16; background-image:linear-gradient(90deg, rgba(227,79,203,.18) 0%, rgba(227,79,203,.04) 45%, transparent 75%); border-top:1px solid rgba(255,255,255,.07);">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <table role="presentation" class="srowTbl" width="100%" cellpadding="0" cellspacing="0"><tr>
               <td width="4" bgcolor="#E34FCB" style="background:#E34FCB; font-size:0; line-height:0;">&nbsp;</td>
               <td class="srow-txt" style="padding:18px 14px 18px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#F49BE0;">Session 6 &nbsp;&middot;&nbsp; 4:45&ndash;5:30 PM ET</div>
@@ -340,7 +341,7 @@ isEnabledForEmailV3Rendering: true
             </tr></table>
 
             <!-- GROUP QUOTE -->
-            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13px; line-height:1.6; color:#AAB2C0; text-align:center; margin-top:22px;">Registering five or more?<br class="groupQuoteBr"> <a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=day2_deep_dive_group_quote&contact=elise#contact" target="_blank" style="color:#8FE3F5; font-weight:600; text-decoration:none;">Contact Elise O&rsquo;Brien</a> for a group quote.</div>
+            <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13px; line-height:1.6; color:#AAB2C0; text-align:center; margin-top:22px;">Registering five or more?<br class="groupQuoteBr"> <a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=day2_deep_dive_group_quote#contact-elise" target="_blank" style="color:#8FE3F5; font-weight:600; text-decoration:none;">Contact Elise O&rsquo;Brien</a> for a group quote.</div>
           </td></tr>
         </table>
         </td></tr></table>
@@ -360,7 +361,7 @@ isEnabledForEmailV3Rendering: true
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:16.5px; color:#AAB2C0; margin-bottom:5px;">Questions about the event?</div>
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:18px; font-weight:700; color:#F5F7FA;">Megan Belka</div>
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:13.4px; color:#AAB2C0; margin-top:4px;">Event Manager, FMC Training</div>
-                <div style="margin-top:6px;"><a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=day2_deep_dive_contact_megan&contact=megan#contact" target="_blank" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:600; font-size:13.4px; color:#8FE3F5; text-decoration:none;">Contact Megan</a></div>
+                <div style="margin-top:6px;"><a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=day2_deep_dive_contact_megan#contact-megan" target="_blank" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:600; font-size:13.4px; color:#8FE3F5; text-decoration:none;">Contact Megan</a></div>
               </td>
             </tr></table>
           </td>
