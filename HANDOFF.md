@@ -93,3 +93,7 @@ She dictated draft copy that she flagged herself as rough: *"Your calendar only 
 5. Email 5's double-divider bug (quick, isolated fix)
 6. Email 4 copy collaboration (needs her input, don't just paste her draft in)
 7. Once all 7 are visually confirmed, move to actual HubSpot import + cross-client testing — this is the real finish line, not a "nice to have"
+
+
+## ⚠️ PRE-SEND: Day 2 speakers (added 2026-08-27)
+The AI Track email (Day 2 deep dive) currently shows NO speaker lines in its session grid — removed deliberately because 4 of 6 sessions were "To be announced" and it read as unfinished. **Before this email is scheduled/sent: re-add speaker lines to all six Day 2 grid rows once the roster is confirmed** (Session 1 = Luisa Winters and Session 3 = Eran Stern are already confirmed on the live site; verify the rest at postinpremiere.com). Same note flagged to Tyree.
