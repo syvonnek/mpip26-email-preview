@@ -93,6 +93,10 @@ isEnabledForEmailV3Rendering: true
     .priceBr{ display:block!important; }
     .priceCell{ display:inline-block!important; padding:4px 0!important; }
     .groupQuoteBr{ display:inline!important; }
+  }
+  /* Phone-width only: swap to the stacked/short variants. Above this the
+     container is still wide enough for the roomier one-line desktop forms. */
+  @media screen and (max-width:560px){
     .mgDesk{ display:none!important; }
     .mgMob{ display:inline!important; }
     .langDesk{ display:none!important; }
