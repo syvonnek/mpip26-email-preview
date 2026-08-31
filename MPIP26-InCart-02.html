@@ -47,7 +47,7 @@ isEnabledForEmailV3Rendering: true
     .dayThumb{ display:block!important; width:100%!important; text-align:left!important; padding:0!important; }
     .dayThumb img{ width:100%!important; max-width:100%!important; height:auto!important; }
     .dayTime{ display:none!important; }
-    .advH{ padding:32px 22px 34px!important; }
+    .advHpad{ padding:32px 22px 34px!important; }
     .advHero{ font-size:33px!important; letter-spacing:-.026em!important; }
     .advSub{ font-size:16px!important; }
     .platePad{ padding:32px 22px 30px!important; }
@@ -66,7 +66,6 @@ isEnabledForEmailV3Rendering: true
     .plateTxt{ box-sizing:border-box!important; }
     .plateImgTd{ box-sizing:border-box!important; }
     .plateImgTd img{ margin:0 auto!important; }
-    .wwGlobe{ display:none!important; }
     .wwTxt{ display:block!important; text-align:center!important; }
     .gband{ padding:22px 26px 24px!important; }
     .langpill{ padding:10px 16px 11px!important; max-width:calc(100% - 4px)!important; }
@@ -102,11 +101,11 @@ isEnabledForEmailV3Rendering: true
     .langMob{ display:inline!important; }
     .edDesk{ display:none!important; }
     .edMob{ display:inline!important; }
-    .langlist{ font-size:11.4px!important; }
+    .langlist{ font-size:11.2px!important; }
   }
   /* Narrow phones + HubSpot's mobile preview pane */
   @media screen and (max-width:365px){
-    .advH{ padding:28px 18px 30px!important; }
+    .advHpad{ padding:28px 18px 30px!important; }
     .prLockImg{ width:36px!important; height:36px!important; }
     .prLockN{ font-size:17px!important; }
     .advPillPad{ padding:8px 13px!important; }
@@ -139,13 +138,11 @@ isEnabledForEmailV3Rendering: true
       </td></tr>
 
       <!-- EMAIL HEADLINE -->
-      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:36px 36px 34px">
+      <tr><td class="advH" bgcolor="#F5F5F5" style="background:#F5F5F5; padding:0;">
+        <div class="advHpad" style="padding:36px 36px 34px;">
         <h1 class="advHero" style="margin:0 0 16px; font-family:'Source Sans 3',Arial,sans-serif; font-size:46px; font-weight:700; line-height:1.06; letter-spacing:-.032em; color:#101010; text-wrap:balance;">Register once.<br>Learn for 180 days.</h1>
         <div class="advSub" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:17.5px; font-weight:350; line-height:1.52; color:#4A4A4A; max-width:480px; text-wrap:pretty;">You don&rsquo;t need to clear your calendar to get the full value of Modern Post in Premiere.</div>
-      </td></tr>
-
-      <!-- ADOBE SPECTRUM BAR -->
-      <tr><td bgcolor="#F5F5F5" style="background:#F5F5F5; font-size:0; line-height:0;">
+        </div>
         <img src="https://4023639.fs1.hubspotusercontent-na1.net/hub/4023639/hubfs/Adobe%20Color%20Bar.png" width="620" height="52" alt="" style="display:block; width:100%; max-width:100%; height:auto; border:0;">
       </td></tr>
 
@@ -180,8 +177,8 @@ isEnabledForEmailV3Rendering: true
       <!-- WORLDWIDE BANNER -->
       <tr><td class="wwBand" bgcolor="#0d1420" align="center" style="background:#0d1420; background-image:linear-gradient(90deg, rgba(34,211,238,.16) 0%, rgba(139,92,246,.13) 52%, rgba(227,79,203,.11) 100%); border-top:1px solid #145566; border-bottom:1px solid #252C36; padding:13px 20px;">
         <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto;"><tr>
-          <td class="wwGlobe" valign="middle" style="padding-right:8px; font-size:0; line-height:0;"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/icon-globe-44.png" width="15" height="15" alt="" style="display:block; width:15px; height:15px; border:0;"></td>
-          <td class="wwTxt" valign="middle" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:13px; font-weight:700; line-height:1.4; color:#EAF0F8; letter-spacing:.01em;">Join live from anywhere with real-time captions in 35+ languages. Replays dubbed in 7 languages.</td>
+          
+          <td class="wwTxt" valign="middle" align="center" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:13px; font-weight:700; line-height:1.4; color:#EAF0F8; letter-spacing:.01em; text-align:center;">Join live from anywhere with real-time captions in 35+ languages. Replays dubbed in 7 languages.</td>
         </tr></table>
       </td></tr>
 
@@ -189,7 +186,7 @@ isEnabledForEmailV3Rendering: true
       <tr><td class="px" bgcolor="#000000" style="background:#000000; padding:28px 30px 0;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
           <td class="dayc" width="50%" valign="top" style="padding-right:6px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#0a0d16" style="background:#0a0d16; border:1px solid #272A32; border-radius:14px;"><tr><td align="center" style="padding:22px 16px 20px;">
+            <table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#0a0d16" style="background:#0a0d16; border:1px solid #272A32; border-radius:14px; height:100%;"><tr><td align="center" style="padding:22px 16px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;"><span style="color:#6FA8FF;">Day 1</span> <span style="color:#5b6480;">&middot;</span> <span style="color:#F06ECF;">Sept 29</span></div>
                 <img src="https://syvonnek.github.io/mpip26-email-preview/assets/icon-day1-ring.png" width="48" height="48" alt="" style="display:block; margin:16px auto 14px; border:0; width:48px; height:48px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:19px; font-weight:800; line-height:1.2; letter-spacing:-.015em; color:#F5F7FA;">Color Mode<br>in Premiere</div>
@@ -197,7 +194,7 @@ isEnabledForEmailV3Rendering: true
               </td></tr></table>
           </td>
           <td class="dayc dayc2" width="50%" valign="top" style="padding-left:6px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#0a0d16" style="background:#0a0d16; border:1px solid #272A32; border-radius:14px;"><tr><td align="center" style="padding:22px 16px 20px;">
+            <table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#0a0d16" style="background:#0a0d16; border:1px solid #272A32; border-radius:14px; height:100%;"><tr><td align="center" style="padding:22px 16px 20px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;"><span style="color:#6FA8FF;">Day 2</span> <span style="color:#5b6480;">&middot;</span> <span style="color:#F06ECF;">Sept 30</span></div>
                 <img src="https://syvonnek.github.io/mpip26-email-preview/assets/icon-day2-spark.png" width="48" height="48" alt="" style="display:block; margin:16px auto 14px; border:0; width:48px; height:48px;">
                 <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:19px; font-weight:800; line-height:1.2; letter-spacing:-.015em; color:#F5F7FA;">AI-Assisted<br>Post-Production</div>
@@ -269,7 +266,7 @@ isEnabledForEmailV3Rendering: true
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-size:15.4px; font-weight:700; color:#F5F7FA; line-height:1.3;">180-day replay<span style="display:block; font-weight:350; font-size:14.2px; color:#9AA2B4; margin-top:2px; line-height:1.4;">Watch on your own schedule</span></div>
           </td>
         </tr></table>
-        <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:16px auto 0;"><tr><td align="center" style="background:#111827; background-image:linear-gradient(90deg, rgba(34,211,238,.20) 0%, rgba(79,124,255,.16) 34%, rgba(139,92,246,.15) 67%, rgba(227,79,203,.13) 100%); border:1px solid #303643; border-radius:26px; padding:11px 26px 12px; max-width:100%;" class="langpill"><table role="presentation" align="center" cellpadding="0" cellspacing="0"><tr><td valign="middle" style="padding-right:8px; font-size:0; line-height:0;"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/icon-globe-44.png" width="15" height="15" alt="" style="display:block; width:15px; height:15px; border:0;"></td><td valign="middle" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:10.6px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#8FE3F5; white-space:nowrap;">Recording Languages</td></tr></table><div class="langlist" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:12.2px; font-weight:400; line-height:1.55; color:#DCE2EC; text-align:center; margin-top:6px;"><span class="langDesk">English &middot; Spanish &middot; French &middot; German &middot; Japanese &middot; Portuguese &middot; Italian</span><span class="langMob">English &middot; Spanish &middot; French &middot; German<br>Japanese &middot; Portuguese &middot; Italian</span></div></td></tr></table>
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:16px auto 0;"><tr><td align="center" style="background:#111827; background-image:linear-gradient(90deg, rgba(34,211,238,.20) 0%, rgba(79,124,255,.16) 34%, rgba(139,92,246,.15) 67%, rgba(227,79,203,.13) 100%); border:1px solid #303643; border-radius:26px; padding:11px 26px 12px; max-width:100%;" class="langpill"><table role="presentation" align="center" cellpadding="0" cellspacing="0"><tr><td valign="middle" style="padding-right:8px; font-size:0; line-height:0;"><img src="https://syvonnek.github.io/mpip26-email-preview/assets/icon-globe-44.png" width="15" height="15" alt="" style="display:block; width:15px; height:15px; border:0;"></td><td valign="middle" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:10.6px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#8FE3F5; white-space:nowrap;">Recording Languages</td></tr></table><div class="langlist" style="font-family:'Source Sans 3',Arial,sans-serif; font-size:11.2px; font-weight:400; line-height:1.55; color:#DCE2EC; text-align:center; margin-top:6px;"><span class="langDesk" style="white-space:nowrap;">English &middot; Spanish &middot; French &middot; German &middot; Japanese &middot; Portuguese &middot; Italian</span><span class="langMob">English &middot; Spanish &middot; French &middot; German<br>Japanese &middot; Portuguese &middot; Italian</span></div></td></tr></table>
       </td></tr>
 
       <!-- EVENT DETAILS (cyan border; CTAs + group quote live inside this card) -->
@@ -299,7 +296,7 @@ isEnabledForEmailV3Rendering: true
                 <![endif]-->
                 <!--[if !mso]><!--><table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#4F7CFF" style="background:linear-gradient(100deg,#22D3EE 0%,#4F7CFF 34%,#8B5CF6 67%,#E34FCB 100%); border-radius:100px;"><a class="btn" href="https://events.zoom.us/ev/AnqUWF2mloHzYgsaptQx0wsb4wWZ83seXLO9Zsdmx0UuPdyxNy3i~AjXUpViZrU7gePZJuMcrI7aF8idMW1htM7Rnn6eJ-UMfTNFM9zMaFJPKWA?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=in_cart_push_2_register_bottom" target="_blank" style="display:inline-block; white-space:nowrap; mso-line-height-rule:exactly; line-height:16px; padding:12px 22px 15px 26px; font-family:'Source Sans 3',Arial,sans-serif; font-size:13.5px; font-weight:700; color:#FFFFFF; letter-spacing:.01em;"><span style="position:relative; top:2px;">Continue Registration</span><span style="vertical-align:middle; padding-left:7px;">&rarr;</span></a></td></tr></table><!--<![endif]--></td>
             </tr></table>
-            <div style="margin-top:14px; text-align:center;"><a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=in_cart_push_2_view_program#agenda" target="_blank" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:600; font-size:13.5px; color:#FFFFFF; text-decoration:underline; text-underline-offset:3px;">View Full Program &rarr;</a></div>
+            <div style="margin-top:14px; text-align:center;"><a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=in_cart_push_2_view_program#agenda" target="_blank" style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:600; font-size:13.5px; color:#FFFFFF; text-decoration:underline; text-underline-offset:3px;">View Full Program</a></div>
 
             <!-- GROUP QUOTE -->
             <div style="font-family:'Source Sans 3',Arial,sans-serif; font-weight:350; font-size:12.2px; line-height:1.6; color:#AAB2C0; text-align:center; margin-top:22px;">Registering five or more?<br class="groupQuoteBr"> <a href="https://www.postinpremiere.com/?utm_campaign=MPIP-2026&utm_source=hs_email&utm_medium=email&utm_content=in_cart_push_2_group_quote#contact-elise" target="_blank" style="color:#8FE3F5; font-weight:600; text-decoration:none;">Contact Elise O&rsquo;Brien</a> for a group quote.</div>
