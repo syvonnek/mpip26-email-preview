@@ -29,7 +29,7 @@
 
 <div class="top">
   <h1>Modern Post in Premiere — Mobile View</h1>
-  <p>All 6 emails at <b>375px</b>, the width of an iPhone SE/13 mini and narrower than most phones, so this is the tightest realistic case. Each frame scrolls on its own. This is the same content as the main preview, just rendered at phone width.</p>
+  <p>All 6 emails at a true <b>375px</b>, the width of an iPhone SE/13 mini and narrower than most phones, so this is the tightest realistic case. Scrollbars are hidden inside each frame so the side margins you see are the real ones. Each frame scrolls on its own.</p>
 </div>
 
 <div class="rail">
@@ -65,6 +65,21 @@
   </div>
 
 </div>
+
+<script>
+  // Same-origin: hide each frame's scrollbar so the visible width is a true 375px
+  // and the side margins on screen are the email's real margins, not a gutter.
+  document.querySelectorAll('iframe').forEach(function(f){
+    f.addEventListener('load', function(){
+      try{
+        var d = f.contentDocument;
+        var s = d.createElement('style');
+        s.textContent = 'html{scrollbar-width:none!important;}html::-webkit-scrollbar{display:none!important;width:0!important;}';
+        d.head.appendChild(s);
+      }catch(e){}
+    });
+  });
+</script>
 
 <div class="foot">
   Renders in this browser's engine, which matches how Apple Mail and the Gmail app lay these out.<br>
